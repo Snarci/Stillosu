@@ -64,11 +64,11 @@ const Login = () => (
 		</Mex>
 		<FormContainer>
 			<Form>
-			<Label for="fname">E-mail:</Label>
-  		<Input type="text" id="fname" name="fname" placeholder="massifadda99@gmail.com"/>
-  		<Label for="lname">Password:</Label>
-  		<Input type="text" id="lname" name="lname" placeholder="*********"/>
-			</Form>
+				<Label for="fname">E-mail:</Label>
+  			<Input type="text" id="fname" name="fname" placeholder="massifadda99@gmail.com"/>
+  			<Label for="lname">Password:</Label>
+  			<Input type="text" id="lname" name="lname" placeholder="*********"/>
+				</Form>
 		</FormContainer>
 		<SubmitC>
 			<Input type="submit" value="Submit"/>
