@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components/macro";
 
 import armadio from "../res/armadio.svg";
-import password from "../res/password.svg";
+import password from "../res/lock.svg";
 import user from "../res/user.svg";
+import mail from "../res/mail.svg";
 
 const Container = styled.div`
 	height: 100vh;
@@ -11,8 +12,8 @@ const Container = styled.div`
 	display: flex;
 	flex-direction: column;
   justify-content: space-around;
-  background-color: #83c5be;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%239ccac2' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23b5cfc6' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23cdd3ca' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23e6d8ce' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%23ffddd2' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+  background-color: #ffddd2;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23e8d9ce' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23d1d4ca' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23b8cfc6' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%239fcac2' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%2383c5be' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
   background-attachment: fixed;
   background-size: cover;
 
@@ -54,7 +55,7 @@ const MexH1 = styled.h1`
 
 
 const Form = styled.form`
-	height: 20vh;
+	height: 40vh;
   display: flex;
   flex-direction: column;
   width: 90%;
@@ -75,7 +76,7 @@ const InputImgContainer = styled.div`
 `;
 
 const InputImg = styled.img`
- 	height: 40px;
+ 	height: 33px;
   padding-right: 15px; 
  
 `;
@@ -126,8 +127,12 @@ const Login = () => (
       <MexH1>Registra il tuo Account!</MexH1>
     </Mex>
     <Form>
-      <InputImgContainer>
+	<InputImgContainer>
         <InputImg src={user} />
+        <Input type="text" id="fname" name="fname" placeholder="Username" />
+      </InputImgContainer>
+      <InputImgContainer>
+        <InputImg src={mail} />
         <Input type="text" id="fname" name="fname" placeholder="Email" />
       </InputImgContainer>
       <InputImgContainer>
