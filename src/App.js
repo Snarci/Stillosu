@@ -4,7 +4,7 @@ import Register from "./components/Register";
 
 const App = () => ( 
   <div>
-    <Login />
+    <Register />
   </div>
 );
 
