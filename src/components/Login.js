@@ -38,8 +38,8 @@ const Input = styled.input`
 	width: 50%;
 	margin: auto;
 	border: 1px solid;
-  border-radius: 16px;
-	height: 25px;
+  border-radius: 10px;
+	height: 30px;
 `;
 
 const Label = styled.label`
@@ -65,9 +65,9 @@ const Login = () => (
 		<FormContainer>
 			<Form>
 			<Label for="fname">E-mail:</Label>
-  		<Input type="text" id="fname" name="fname" value="massifadda99@gmail.com"/>
+  		<Input type="text" id="fname" name="fname" placeholder="massifadda99@gmail.com"/>
   		<Label for="lname">Password:</Label>
-  		<Input type="text" id="lname" name="lname" value="*********"/>
+  		<Input type="text" id="lname" name="lname" placeholder="*********"/>
 			</Form>
 		</FormContainer>
 		<SubmitC>
