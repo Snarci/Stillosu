@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
+import { useHistory } from "react-router-dom";
 
 import armadio from "../res/armadio.svg";
 import password from "../res/lock.svg";
@@ -90,7 +91,7 @@ const Input = styled.input`
   font-weight: bold;
 `;
 
-const Submit = styled.input`
+const SButton = styled.button`
 	width: 70%;
 	margin: auto;
   border-radius: 10px;
@@ -99,10 +100,6 @@ const Submit = styled.input`
   font-weight: bold;
   background-color: #e29578;
   border: 1px solid;
-`;
-
-const Label = styled.label`
-	text-align: center;
 `;
 
 const SubmitC = styled.div`
@@ -117,39 +114,51 @@ const RegText = styled.h1`
   text-decoration: underline;
 `;
 
-const Login = () => (
-  <Container>
-    <ContainerImg>
-      <StyledH1>Stillosu</StyledH1>
-      <Img src={armadio} />
-    </ContainerImg>
-    <Mex>
-      <MexH1>Registra il tuo Account!</MexH1>
-    </Mex>
-    <Form>
-	<InputImgContainer>
-        <InputImg src={user} />
-        <Input type="text" id="fname" name="fname" placeholder="Username" />
-      </InputImgContainer>
-      <InputImgContainer>
-        <InputImg src={mail} />
-        <Input type="text" id="fname" name="fname" placeholder="Email" />
-      </InputImgContainer>
-      <InputImgContainer>
-        <InputImg src={password} />
-        <Input type="password" id="lname" name="lname" placeholder="Password" />
-      </InputImgContainer>
-	  <InputImgContainer>
-        <InputImg src={password} />
-        <Input type="password" id="lname" name="lname" placeholder="Conferma password" />
-      </InputImgContainer>
-    </Form>
-    <SubmitC>
-      <Submit type="submit" value="Accedi" />
-      <RegText>Oppure accedi..</RegText>
-    </SubmitC>
-
-  </Container>
+const Register = () => {
+	const history = useHistory();
+	const handleClickR = () =>(
+			history.push("/login")
+	);
+	const handleClickL = () =>(
+		history.push("/")
 );
+	return(
+  	<Container>
+    	<ContainerImg>
+      	<StyledH1>Stillosu</StyledH1>
+      	<Img src={armadio} />
+    	</ContainerImg>
+    	<Mex>
+      	<MexH1>Registra il tuo Account!</MexH1>
+    	</Mex>
+    	<Form>
+		<InputImgContainer>
+      	  <InputImg src={user} />
+        	<Input type="text" id="fname" name="fname" placeholder="Username" />
+      	</InputImgContainer>
+      	<InputImgContainer>
+        	<InputImg src={mail} />
+        	<Input type="text" id="fname" name="fname" placeholder="Email" />
+      	</InputImgContainer>
+      	<InputImgContainer>
+      	  <InputImg src={password} />
+     	    <Input type="password" id="lname" name="lname" placeholder="Password" />
+      	</InputImgContainer>
+	  	<InputImgContainer>
+        	<InputImg src={password} />
+        	<Input type="password" id="lname" name="lname" placeholder="Conferma password" />
+      	</InputImgContainer>
+    	</Form>
+    	<SubmitC>
+				<SButton type="button" onClick={handleClickR}>
+					<MexH1>Registrati</MexH1>
+				</SButton>
+				<a onClick={handleClickL}>
+					<RegText>Oppure accedi..</RegText>
+				</a>
+    	</SubmitC>
+  	</Container>
+	);
+};
 
-export default Login;
+export default Register;

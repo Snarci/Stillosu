@@ -18,11 +18,11 @@ const Container = styled.div`
 const App = () => ( 
   <Router>
     <Switch>
-      <Route path="/">
-        <Login />
-      </Route>
       <Route path="/register">
         <Register />
+      </Route>
+      <Route path="/">
+        <Login />
       </Route>
     </Switch>
   </Router>
