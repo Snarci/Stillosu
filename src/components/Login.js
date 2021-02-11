@@ -97,6 +97,7 @@ const Submit = styled.input`
   font-size: 130%;
   font-weight: bold;
   background-color: #e29578;
+	border: 1px solid;
 `;
 
 const Label = styled.label`

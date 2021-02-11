@@ -93,10 +93,11 @@ const Submit = styled.input`
 	width: 70%;
 	margin: auto;
   border-radius: 10px;
-	height: 45px;
+  height: 45px;
   font-size: 130%;
   font-weight: bold;
   background-color: #e29578;
+  border: 1px solid;
 `;
 
 const Label = styled.label`
