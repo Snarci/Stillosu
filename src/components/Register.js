@@ -6,6 +6,7 @@ import armadio from "../res/armadio.svg";
 import password from "../res/lock.svg";
 import user from "../res/user.svg";
 import mail from "../res/mail.svg";
+import logo from "../res/logov3.svg";
 
 const Container = styled.div`
 	height: 100vh;
@@ -113,7 +114,7 @@ const Register = () => {
   	<Container>
     	<ContainerImg>
       	<StyledH1>Stillosu</StyledH1>
-      	<Img src={armadio} />
+      	<Img src={logo} />
     	</ContainerImg>
     	<Mex>
       	<MexH1>Registra il tuo Account!</MexH1>

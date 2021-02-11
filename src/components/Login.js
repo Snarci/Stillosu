@@ -7,6 +7,7 @@ import { useHistory } from "react-router-dom";
 import armadio from "../res/armadio.svg";
 import password from "../res/lock.svg";
 import mail from "../res/mail.svg";
+import logo from "../res/logov3.svg";
 
 const Container = styled.div`
 	height: 100vh;
@@ -115,7 +116,7 @@ const Login = () => {
   	<Container>
     	<ContainerImg>
       	<StyledH1>Stillosu</StyledH1>
-      	<Img src={armadio} />
+      	<Img src={logo} />
     	</ContainerImg>
     	<Mex>
       	<MexH1>Accedi al tuo Account!</MexH1>
