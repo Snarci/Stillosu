@@ -10,7 +10,6 @@ import mail from "../res/mail.svg";
 
 const Container = styled.div`
 	height: 100vh;
-	
 	display: flex;
 	flex-direction: column;
   justify-content: space-around;
@@ -30,9 +29,8 @@ const StyledH1 = styled.h1`
 	margin : 0px auto 0px auto;
   margin-top: 20px;
   font-style: italic;
-  
   border-radius: 7px;
-  `;
+`;
 const Img = styled.img`
 	height: 11vh;
   margin: 16px 0px 6px 0px;
@@ -48,14 +46,10 @@ const Mex = styled.div`
   background-color: #ffddd2;
   
 `;
-
 const MexH1 = styled.h1`
 	font-size: 1em;
   margin: 8px 0px 8px 0px;
 `;
-
-
-
 const Form = styled.form`
 	height: 20vh;
   display: flex;
@@ -66,21 +60,18 @@ const Form = styled.form`
   padding: 6px;
 
 `;
-
 const InputImgContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+	flex-direction: row;
   background-color: #EDF6F9;
   margin: 5px;
   border-radius: 10px;
   border: 1px solid;
 `;
-
 const InputImg = styled.img`
  	height: 33px;
   padding-right: 15px; 
- 
 `;
 const Input = styled.input`
 	width: 75%;
@@ -91,7 +82,6 @@ const Input = styled.input`
   font-size: 100%; 
   font-weight: bold;
 `;
-
 const SButton = styled.button`
 	width: 70%;
 	margin: auto;
@@ -102,19 +92,16 @@ const SButton = styled.button`
   background-color: #e29578;
 	border: 1px solid;
 `;
-
 const SubmitC = styled.div`
 	display: flex;
   flex-direction: column;
   margin: 8px 0px 8px 0px;
-`
-
+`;
 const RegText = styled.h1`
 	font-size: 1em;
 	text-align: center;
   text-decoration: underline;
 `;
-
 
 const Login = () => {
 	const history = useHistory();

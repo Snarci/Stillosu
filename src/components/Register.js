@@ -17,7 +17,6 @@ const Container = styled.div`
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23e8d9ce' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23d1d4ca' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23b8cfc6' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%239fcac2' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%2383c5be' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
   background-attachment: fixed;
   background-size: cover;
-
 `;
 const ContainerImg = styled.div`
   display: flex;
@@ -28,10 +27,9 @@ const ContainerImg = styled.div`
 const StyledH1 = styled.h1`
 	margin : 0px auto 0px auto;
   margin-top: 20px;
-  font-style: italic;
-  
+  font-style: italic;  
   border-radius: 7px;
-  `;
+`;
 const Img = styled.img`
 	height: 11vh;
   margin: 16px 0px 6px 0px;
@@ -45,16 +43,11 @@ const Mex = styled.div`
   margin: 0px auto 0px auto;
   text-align: center;
   background-color: #ffddd2;
-  
 `;
-
 const MexH1 = styled.h1`
 	font-size: 1em;
   margin: 8px 0px 8px 0px;
 `;
-
-
-
 const Form = styled.form`
 	height: 40vh;
   display: flex;
@@ -63,19 +56,16 @@ const Form = styled.form`
   margin: auto;
   border-radius: 15px;
   padding: 6px;
-
 `;
-
 const InputImgContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-direction: row;
   background-color: #EDF6F9;
   margin: 5px;
   border-radius: 10px;
   border: 1px solid;
 `;
-
 const InputImg = styled.img`
  	height: 33px;
   padding-right: 15px; 
@@ -90,7 +80,6 @@ const Input = styled.input`
   font-size: 100%; 
   font-weight: bold;
 `;
-
 const SButton = styled.button`
 	width: 70%;
 	margin: auto;
@@ -101,13 +90,11 @@ const SButton = styled.button`
   background-color: #e29578;
   border: 1px solid;
 `;
-
 const SubmitC = styled.div`
 	display: flex;
   flex-direction: column;
   margin: 8px 0px 8px 0px;
-`
-
+`;
 const RegText = styled.h1`
 	font-size: 1em;
 	text-align: center;
