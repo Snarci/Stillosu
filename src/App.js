@@ -10,7 +10,7 @@ import {
 
 import Login from "./components/Login";
 import Register from "./components/Register";
-
+import Home from "./components/Home";
 const Container = styled.div`
 
 `;
@@ -21,8 +21,11 @@ const App = () => (
       <Route path="/register">
         <Register />
       </Route>
-      <Route path="/">
+      <Route path="/login">
         <Login />
+      </Route>
+      <Route path="/home">
+        <Home />
       </Route>
     </Switch>
   </Router>
