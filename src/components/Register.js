@@ -69,6 +69,7 @@ const InputImgContainer = styled.div`
 `;
 const InputImg = styled.img`
  	height: 33px;
+	margin-left: 10px;
   padding-right: 15px; 
  
 `;
