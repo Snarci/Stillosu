@@ -18,7 +18,7 @@ const Container = styled.div`
 const App = () => ( 
   <Router>
     <Switch>
-      <Route path="/login">
+      <Route path="/">
         <Login />
       </Route>
       <Route path="/register">
