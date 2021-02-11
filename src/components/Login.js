@@ -1,5 +1,7 @@
 import React from "react";
-import styled from "styled-components/macro"
+import styled from "styled-components/macro";
+
+import armadio from "../res/armadio.svg";
 
 const Container = styled.div`
 	height: 100vh;
@@ -8,20 +10,33 @@ const Container = styled.div`
 	flex-direction: column;
   justify-content: space-around;
 `;
+const ContainerImg = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 15vh;
+`;
 const StyledH1 = styled.h1`
 	margin : 0px auto 0px auto;
 `;
-
+const Img = styled.img`
+	height: 11vh;
+  margin: 16px 0px 6px 0px;
+`;
 const Mex = styled.div`
   border: 1px solid;
   border-radius: 15px;
-  width: 50%;
+  padding: 5px;
+  width: 60%;
+  background-color: #EDF6F9;
   margin: 0px auto 0px auto;
   text-align: center;
+  
 `;
 
 const MexH1 = styled.h1`
 	font-size: 1em;
+  margin: 8px 0px 8px 0px;
 `;
 
 const FormContainer = styled.div`
@@ -32,6 +47,12 @@ const Form = styled.form`
 	height: 20vh;
   display: flex;
   flex-direction: column;
+  border: 1px solid;
+  width: 75%;
+  margin: auto;
+  border-radius: 15px;
+  padding: 6px;
+
 `;
 
 const Input = styled.input`
@@ -58,7 +79,10 @@ const RegText = styled.h1`
 
 const Login = () => (
 	<Container>
-		<StyledH1>Login</StyledH1>
+    <ContainerImg>
+	  	<StyledH1>Stillosu</StyledH1>
+		  <Img src={armadio}/>
+    </ContainerImg>
 		<Mex>
 			<MexH1>Accedi al tuo Account!</MexH1>
 		</Mex>
