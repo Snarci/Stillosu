@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 
 import Header from "./Header";
 
+
 import armadio from "../res/armadio.svg";
 import camera from "../res/camera.svg";
 import capello from "../res/capello.svg";
@@ -51,7 +52,7 @@ const Img = styled.img`
 const Home = () => {
 	const history = useHistory();
 	const handleClickCamera = () =>(
-			history.push("/photo-add")
+			history.push("/camera")
 	);
 	const handleClickAbbinameto = () =>(
 		history.push("/abbinamento")

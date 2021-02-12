@@ -13,7 +13,7 @@ import Register from "./components/Register";
 import Home from "./components/Home";
 import Header from "./components/Header";
 import Armadio from "./components/Armadio";
-
+import Camera from "./components/Camera";
 const Container = styled.div`
 
 `;
@@ -34,6 +34,11 @@ const App = () => (
       <Route path="/login">
         <Login />
       </Route>
+      
+      <Route path="/camera">
+        <Camera />
+      </Route>
+
     </Switch>
   </Router>
 );
