@@ -81,7 +81,7 @@ const Armadio = () =>{
          abiti.filter(abito => abito.nome.includes(filtro)).map(abitifiltrati => {
           console.log(abitifiltrati.immagine);
           return(
-          <Abito image={abitifiltrati.immagine} />
+          <Abito image={abitifiltrati.immagine} nome={abitifiltrati.nome}/>
            )
           }
           )
