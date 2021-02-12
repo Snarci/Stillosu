@@ -8,6 +8,8 @@ import H1 from "./bits/H1";
 
 import search from "../res/search.svg";
 
+import {abiti} from "../utils/date";
+
 const Container = styled.div`
 	height: 100vh;
 	display: flex;
@@ -63,6 +65,7 @@ const Armadio = () =>{
     history.push("/home")
 	};
   const [filtro,setFiltro] = useState("");
+  console.log(abiti);
 	return(
     console.log({filtro}),
 		<Container>
@@ -74,84 +77,15 @@ const Armadio = () =>{
         </InputImgContainer>
       </Filto>
       <Anta>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
-        <Abito image={search}/>
+        {
+          abiti.map( abiti => {
+          console.log(abiti.immagine);
+          return(
+          <Abito image={abiti.immagine} />
+           )
+          }
+          )
+        }
       </Anta>
 		</Container>
 	);
