@@ -20,6 +20,7 @@ const Circle = styled.button`
 	margin: auto 17px auto 17px;
 	display: flex;
 	align-items: center;
+	outline:none;
 `;
 const Img = styled.img`
 	height: 5vh;

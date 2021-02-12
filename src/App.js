@@ -22,8 +22,7 @@ const Container = styled.div`
 
 const App = () => ( 
   <Router>
-    <Switch>
-      
+    <Switch> 
       <Route path="/home">
         <Home />
       </Route>
