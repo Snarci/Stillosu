@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components/macro";
 import { useHistory } from "react-router-dom";
 
 import Header from "./Header";
 import Abito from "./bits/Abito";
+import H1 from "./bits/H1";
 
 import search from "../res/search.svg";
 
@@ -61,13 +62,15 @@ const Armadio = () =>{
 	const handleClickBack = () =>{
     history.push("/home")
 	};
+  const [filtro,setFiltro] = useState("");
 	return(
+    console.log({filtro}),
 		<Container>
 			<Header leftFun={handleClickBack}/>
       <Filto>
         <InputImgContainer>
           <InputImg src={search}/>
-          <Input />
+          <Input value={filtro} onChange={event => setFiltro(event.target.value)} />
         </InputImgContainer>
       </Filto>
       <Anta>
