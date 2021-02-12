@@ -111,7 +111,7 @@ const Login = () => {
 			history.push("/register")
 	);
 	const handleClickA = () =>(
-		history.push("/login")
+		history.push("/home")
 );
 	return(
   	<Container>

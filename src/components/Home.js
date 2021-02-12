@@ -37,7 +37,7 @@ const SubMenuContainer = styled.button`
   justify-content: center;
   margin: auto; 
 `;
-const Text = styled.text`
+const Text = styled.h1`
   align-self: center;
   font-size: 1.3em;
   font-weight: bold;

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from "styled-components/macro";
+import { useHistory } from "react-router-dom";
 
 import logo from "../res/logov3.svg";
 import arrow from "../res/arrowback.svg";
@@ -24,7 +25,9 @@ const Img = styled.img`
 	height: 5vh;
 	margin: auto;
 `;
-const Header = ({ leftFun, rightFun }) =>(
+const Header = ({ leftFun, rightFun }) =>{
+	console.log(leftFun);
+	return(
 	<Container>
 		<Circle onClick={leftFun}>
 			<Img src={arrow} />
@@ -34,6 +37,7 @@ const Header = ({ leftFun, rightFun }) =>(
 		<Img src={menu} />
 		</Circle>
 	</Container>
-);
+	);
+};
 
 export default Header;

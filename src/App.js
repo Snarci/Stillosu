@@ -12,6 +12,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
 import Header from "./components/Header";
+import Armadio from "./components/Armadio";
 
 const Container = styled.div`
 
@@ -20,17 +21,18 @@ const Container = styled.div`
 const App = () => ( 
   <Router>
     <Switch>
+      
+      <Route path="/home">
+        <Home />
+      </Route>
+      <Route path="/armadio">
+        <Armadio />
+      </Route>
       <Route path="/register">
         <Register />
       </Route>
       <Route path="/login">
         <Login />
-      </Route>
-      <Route path="/home">
-        <Home />
-      </Route>
-      <Route path="/header">
-        <Header />
       </Route>
     </Switch>
   </Router>
