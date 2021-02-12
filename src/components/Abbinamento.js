@@ -9,7 +9,7 @@ const Container = styled.div`
 
 `;
 
-const Camera = () =>{
+const Abbinamento = () =>{
 	const history = useHistory();
 	const handleClickBack = () =>{
     history.push("/home")
@@ -21,4 +21,4 @@ const Camera = () =>{
 	);
 };
 
-export default Camera;
+export default Abbinamento;

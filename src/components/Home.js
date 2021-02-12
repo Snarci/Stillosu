@@ -59,9 +59,12 @@ const Home = () => {
 	const handleClickArmadio = () =>(
 		history.push("/armadio")
 	);
+	const handleClickLogin = () =>(
+		history.push("/login")
+	);
 	return(
     <Container>
-			<Header />
+		<Header leftFun={handleClickLogin}/>
       	<SubMenuContainer onClick={handleClickCamera}>
 					<Text>Aggiungi un nuovo capo</Text>
         	<Img src={camera} />

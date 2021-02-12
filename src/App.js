@@ -13,6 +13,8 @@ import Register from "./components/Register";
 import Home from "./components/Home";
 import Header from "./components/Header";
 import Armadio from "./components/Armadio";
+import Abbinamento from "./components/Abbinamento";
+import Camera from "./components/Camera";
 
 const Container = styled.div`
 
@@ -27,6 +29,12 @@ const App = () => (
       </Route>
       <Route path="/armadio">
         <Armadio />
+      </Route>
+      <Route path="/abbinamento">
+        <Abbinamento />
+      </Route>
+      <Route path="/photo-add">
+        <Camera />
       </Route>
       <Route path="/register">
         <Register />
