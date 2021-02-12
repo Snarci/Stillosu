@@ -26,11 +26,11 @@ const MenuContainer = styled.div`
 `;
 
 const SubMenuContainer = styled.button`
-  background-color: transparent;
+  background-color: rgba(237, 246, 249,0.6);
   align-self: center;
   width: 80%;
   height: 15%;
-  border: 1px solid;
+  border: 0px solid;
   border-radius: 15px ;
   display: flex;
 	flex-direction: column;
@@ -45,6 +45,7 @@ const Text = styled.h1`
 const Img = styled.img`
  	height: 60%;
   margin: auto; 
+ 
 `;
 
 const Home = () => {
