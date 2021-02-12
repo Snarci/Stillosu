@@ -139,12 +139,12 @@ const Register = () => {
       	</InputImgContainer>
     	</Form>
     	<SubmitC>
-				<SButton type="button" onClick={handleClickR}>
-					<MexH1>Registrati</MexH1>
-				</SButton>
-				<a onClick={handleClickL}>
-					<RegText>Oppure accedi..</RegText>
-				</a>
+			<SButton type="button" onClick={handleClickR}>
+				<MexH1>Registrati</MexH1>
+			</SButton>
+			<a onClick={handleClickL}>
+				<RegText>Oppure accedi..</RegText>
+			</a>
     	</SubmitC>
   	</Container>
 	);
