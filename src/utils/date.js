@@ -131,7 +131,7 @@ export const abiti = [
     "id": 3
   },
   {
-    "nome": "giacca",
+    "nome": "capello",
     "immagine": C4,
     "id": 4
   }

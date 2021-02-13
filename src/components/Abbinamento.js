@@ -30,9 +30,6 @@ const Quadro = styled.div`
   border-color: #e29578;
   margin: auto ;
   padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  overflow-x: scroll;
 `;
 const Img = styled.img`
   width: 100%;
@@ -73,8 +70,9 @@ const Circle = styled.button`
 	outline:none;
 `;
 const Icon = styled.img`
-	height: 5vh;
+	height: 4vh;
 	margin: auto;
+  transform: ${(props) => (props.condition === 'gira' ? 'scale(-1, 1)' : 'scale(1, 1)')};
 `;
 const Abbinamento = () =>{
 	const history = useHistory();
@@ -86,19 +84,39 @@ const Abbinamento = () =>{
   const [pantaloneid,setIdP] = useState(1);
   const [scarpeid,setIdS] = useState(1);
 
-  const AvantiM = () => {
-    if (capelloid!==4){
+  const AvantiC = () => {
+    if (capelloid<4){
       setIdC(capelloid+1) 
     }else{
       setIdC(1)
     }
   };
-  
+  const AvantiM = () => {
+    if (magliettaid<8){
+      setIdM(magliettaid+1) 
+    }else{
+      setIdM(1)
+    }
+  };
+  const AvantiP = () => {
+    if (pantaloneid<4){
+      setIdP(pantaloneid+1) 
+    }else{
+      setIdP(1)
+    }
+  };
+  const AvantiS = () => {
+    if (scarpeid<4){
+      setIdS(scarpeid+1) 
+    }else{
+      setIdS(1)
+    }
+  };
 	return(
 		<Container>
 			<Header leftFun={handleClickBack}/>
       <Info>
-        <Text>Scorri a sinistra per abbinare</Text>
+        <Text>Premi i pulsanti per abbinare</Text>
       </Info>
       <ContainerOutfit>
         <ContainerQP>
@@ -107,7 +125,7 @@ const Abbinamento = () =>{
           </Circle>
           <Quadro>
             {
-              abiti.filter(abito => abito.id.includes("capello")).filter(abito => abito.nome.includes("capello")).map(abitifiltrati => {
+              abiti.filter(abito => abito.id===capelloid).filter(abito => abito.nome.includes("capello")).map(abitifiltrati => {
               console.log(abitifiltrati.immagine);
                 return(
                   <Img src={abitifiltrati.immagine} />
@@ -116,17 +134,17 @@ const Abbinamento = () =>{
               )
             }  
           </Quadro>
-          <Circle>
-            <Icon src={arrow} />
+          <Circle onClick={AvantiC}>
+            <Icon src={arrow} condition={"gira"}/>
           </Circle>
         </ContainerQP>
         <ContainerQP>
           <Circle>
-            <Icon src={arrow} />
+            <Icon src={arrow}/>
           </Circle>
           <Quadro>
             {
-              abiti.filter(abito => abito.nome.includes("maglietta")).map(abitifiltrati => {
+              abiti.filter(abito => abito.id===magliettaid).filter(abito => abito.nome.includes("maglietta")).map(abitifiltrati => {
               console.log(abitifiltrati.immagine);
                 return(
                   <Img src={abitifiltrati.immagine} />
@@ -135,8 +153,8 @@ const Abbinamento = () =>{
               )
             }  
           </Quadro>
-          <Circle>
-            <Icon src={arrow} />
+          <Circle onClick={AvantiM}>
+            <Icon src={arrow} condition={"gira"}/>
           </Circle>
         </ContainerQP><ContainerQP>
           <Circle>
@@ -144,7 +162,7 @@ const Abbinamento = () =>{
           </Circle>
           <Quadro>
             {
-              abiti.filter(abito => abito.nome.includes("pantalone")).map(abitifiltrati => {
+              abiti.filter(abito => abito.id===pantaloneid).filter(abito => abito.nome.includes("pantalone")).map(abitifiltrati => {
               console.log(abitifiltrati.immagine);
                 return(
                   <Img src={abitifiltrati.immagine} />
@@ -153,8 +171,8 @@ const Abbinamento = () =>{
               )
             }  
           </Quadro>
-          <Circle>
-            <Icon src={arrow} />
+          <Circle onClick={AvantiP}> 
+            <Icon src={arrow} condition={"gira"}/>
           </Circle>
         </ContainerQP><ContainerQP>
           <Circle>
@@ -162,7 +180,7 @@ const Abbinamento = () =>{
           </Circle>
           <Quadro>
             {
-              abiti.filter(abito => abito.nome.includes("scarpe")).map(abitifiltrati => {
+              abiti.filter(abito => abito.id===scarpeid).filter(abito => abito.nome.includes("scarpe")).map(abitifiltrati => {
               console.log(abitifiltrati.immagine);
                 return(
                   <Img src={abitifiltrati.immagine} />
@@ -171,8 +189,8 @@ const Abbinamento = () =>{
               )
             }  
           </Quadro>
-          <Circle>
-            <Icon src={arrow} />
+          <Circle onClick={AvantiS}>
+            <Icon src={arrow} condition={"gira"}/>
           </Circle>
         </ContainerQP>
       </ContainerOutfit>
