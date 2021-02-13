@@ -4,8 +4,7 @@ import { useHistory } from "react-router-dom";
 
 import Header from "./Header";
 
-import image from "../res/pp.jpg";
-
+import {abiti} from "../utils/date";
 
 const Container = styled.div`
 	height: 100vh;
@@ -27,7 +26,7 @@ const Quadro = styled.div`
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  overflow-y: scroll;
+  overflow-x: scroll;
 `;
 const Img = styled.img`
   height: 100%;
@@ -69,16 +68,48 @@ const Abbinamento = () =>{
       </Info>
       <ContainerOutfit>
         <Quadro>
-          <Img src={image} />
+        {
+         abiti.filter(abito => abito.nome.includes("capello")).map(abitifiltrati => {
+          console.log(abitifiltrati.immagine);
+          return(
+          <Img src={abitifiltrati.immagine} />
+           )
+          }
+          )
+        }  
         </Quadro>
         <Quadro>
-          <Img src={image} />
+        {
+         abiti.filter(abito => abito.nome.includes("maglietta")).map(abitifiltrati => {
+          console.log(abitifiltrati.immagine);
+          return(
+          <Img src={abitifiltrati.immagine} />
+           )
+          }
+          )
+        }
         </Quadro>
         <Quadro>
-          <Img src={image} /> 
+        {
+         abiti.filter(abito => abito.nome.includes("pantalone")).map(abitifiltrati => {
+          console.log(abitifiltrati.immagine);
+          return(
+          <Img src={abitifiltrati.immagine} />
+           )
+          }
+          )
+        } 
         </Quadro>
         <Quadro>
-          <Img src={image} />
+        {
+         abiti.filter(abito => abito.nome.includes("scarpe")).map(abitifiltrati => {
+          console.log(abitifiltrati.immagine);
+          return(
+          <Img src={abitifiltrati.immagine} />
+           )
+          }
+          )
+        }
         </Quadro>
       </ContainerOutfit>
 		</Container>
