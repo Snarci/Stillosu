@@ -21,7 +21,7 @@ const Button = styled.button`
   border: 0px solid;
   border-radius: 15px;
   box-shadow: 1px 1px 20px 1px #333333;
-  background-color: rgb(226,149,120,0.5);
+  background-color: rgb(226,149,120,0.9);
 `;
 const Text = styled.h1`
   margin: auto;

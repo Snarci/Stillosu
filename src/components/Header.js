@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from "react";
 import styled from "styled-components/macro";
 import { useHistory } from "react-router-dom";
+
+import Side from "./bits/SideMenu";
 
 import logo from "../res/logov3.svg";
 import arrow from "../res/arrowback.svg";
@@ -26,18 +28,31 @@ const Img = styled.img`
 	height: 5vh;
 	margin: auto;
 `;
-const Header = ({ leftFun, rightFun }) =>{
+const Header = ({ leftFun }) =>{
 	console.log(leftFun);
+  const [sideBar, setSide] = useState('closed');
+  const openClose = () => {
+    if (sideBar === 'opened') {
+      setSide('closed');
+      console.log('aperto');
+    } else {
+      setSide('opened');
+      console.log('closed');
+    }
+  };
 	return(
 	<Container>
+    <Side open={openClose} stateSide={sideBar}/>
 		<Circle onClick={leftFun}>
 			<Img src={arrow} />
 		</Circle>
 		<Img src={logo}/>
-		<Circle onClick={rightFun}>
+		<Circle onClick={openClose}>
 		<Img src={menu} />
 		</Circle>
+
 	</Container>
+  
 	);
 };
 

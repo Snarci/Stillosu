@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from "styled-components/macro";
 
-const Container = styled.div`
+const Container = styled.button`
   width: 16vh;
   height: 18vh;
-  margin:  10px auto 10px auto;
-  background-color: rgba(237, 246, 249,0.8);
+  margin:  auto;
   border-radius: 15px;
+  border: none;
+  outline: none;
   text-align: center;
   display: flex;
   flex-direction: column;
