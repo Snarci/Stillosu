@@ -8,6 +8,7 @@ import {
   NavLink
 } from "react-router-dom";
 
+import PrimaPagina from "./components/PrimaPagina";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
@@ -40,6 +41,9 @@ const App = () => (
       </Route>
       <Route path="/login">
         <Login />
+      </Route>
+      <Route path="/">
+        <PrimaPagina />
       </Route>
     </Switch>
   </Router>

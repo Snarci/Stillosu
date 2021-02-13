@@ -6,24 +6,24 @@ const Container = styled.div`
   height: 18vh;
   margin:  10px auto 10px auto;
   background-color: rgba(237, 246, 249,0.8);
-  border-radius: 11px;
+  border-radius: 15px;
   text-align: center;
-  align-items:center;
- 
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  background-color: rgb(226,149,120,0.5);
 `;
 const Img = styled.img`
-  height: 70%;
-  
-  border-radius: 11px;
-  
-  
+  height: 60%;
+  border-radius: 15px;
+  margin: auto;
 `;
-const Text = styled.text`
-  width: 30%;
+const Text = styled.h1`
   font-size: 1.1em;
-  border-width:5px solid;
-  border-radius: 11px;
-  
+  border: 0px solid;
+  border-radius: 15px;
+  width: 70%;
+  margin: auto;
 `;
 
 const Abito = ({ image, nome}) => (

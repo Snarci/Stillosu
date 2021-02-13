@@ -23,7 +23,9 @@ const Container = styled.div`
 const Anta = styled.div`
   height: 76vh;
   width: 90%;
-  border: 1px solid;
+  border: 3px solid;
+  border-radius: 15px;
+  border-color: #e29578;
   margin: auto ;
   padding: 10px;
   display: flex;
@@ -41,7 +43,7 @@ const InputImgContainer = styled.div`
 	flex-direction: row;
   background-color: #e29578;
   margin: 5px;
-  border-radius: 10px;
+  border-radius: 15px;
   border: 1px transparent;
 `
 const InputImg = styled.img`
