@@ -17,22 +17,32 @@ const Container = styled.div`
   background-size: cover;
 `;
 const PhotoContainer = styled.div`
-  background-color: rgba(237, 246, 249,0.6);
+  background-color: rgba(237, 246, 249,1);
   align-self: center;
-  width: 80%;
-  height: 60%;
+  width: 260px;
+  height: 260px;
   border: 0px solid;
-  border-radius: 15px ;
+  border-radius: 100% ;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: auto; 
 `;
 
-const Img = styled.img`
-  width: 90%;
+const PhotoContainerVariant = styled.div`
+  background-color: rgba(0, 0, 0,.95);
+  align-self: center;
+  width: 220px;
+  height: 220px;
+  border: 0px solid;
+  border-radius: 100% ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: auto; 
 `;
+
+
 
 const SButton = styled.button`
 	width: 45%;
@@ -66,15 +76,15 @@ const MexH1Variant = styled.h1`
   margin-top: 60px;
 `;
 
-const Camera = () =>{
+
+const ConfermaColore = () =>{
 	const history = useHistory();
 	const handleClickBack = () =>{
-    history.push("/home")
+    history.push("/photo-add")
 	};
   //poi cambia TODO nuova schermata
   const handleClickConfirm = () =>{
-    console.log("testttt");
-     history.push("/conferma-colore");
+     history.push("/home");
   
 	};
   const handleClickDelete = () =>{
@@ -83,15 +93,16 @@ const Camera = () =>{
 	return(
 		<Container>
 			<Header leftFun={handleClickBack}/>
-      <MexH1Variant>Confermi la selezione?</MexH1Variant>
+      <MexH1Variant>E' questo il colore del capo?</MexH1Variant>
 			<PhotoContainer>
-				<Img src={T1}/>	
+        <PhotoContainerVariant>
+			  </PhotoContainerVariant>
 			</PhotoContainer>
       <SubmitC>
-      <SButton  onClick= {handleClickDelete}>
+      <SButton type="button" onClick= {handleClickConfirm}>
 					<MexH1>Elimina</MexH1>
 			</SButton>
-      <SButton   onClick= {handleClickConfirm}>
+      <SButton type="button"  onClick= {handleClickDelete}>
 					<MexH1>Conferma</MexH1>
 			</SButton>
     	</SubmitC>
@@ -99,4 +110,4 @@ const Camera = () =>{
 	);
 };
 
-export default Camera;
+export default ConfermaColore;

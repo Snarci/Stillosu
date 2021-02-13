@@ -16,6 +16,7 @@ import Armadio from "./components/Armadio";
 import Abbinamento from "./components/Abbinamento";
 import Camera from "./components/Camera";
 import Visual from "./components/VisualAbito";
+import ConfermaColore from "./components/ConfermaColore";
 
 const Container = styled.div`
 
@@ -52,6 +53,9 @@ const App = () => {
         <Route path="/">
           <PrimaPagina />
         </Route>
+        <Route path="/conferma-colore">
+        <ConfermaColore />
+      </Route>
       </Switch>
     </Router>
 );
