@@ -12,10 +12,10 @@ import PrimaPagina from "./components/PrimaPagina";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
-import Header from "./components/Header";
 import Armadio from "./components/Armadio";
 import Abbinamento from "./components/Abbinamento";
 import Camera from "./components/Camera";
+import Visual from "./components/VisualAbito";
 
 const Container = styled.div`
 
@@ -24,6 +24,9 @@ const Container = styled.div`
 const App = () => ( 
   <Router>
     <Switch> 
+      <Route path="/visual">
+        <Visual />
+      </Route>
       <Route path="/home">
         <Home />
       </Route>

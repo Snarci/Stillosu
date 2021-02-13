@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 
 import Header from "./Header";
 import Abito from "./bits/Abito";
-import H1 from "./bits/H1";
 
 import search from "../res/search.svg";
 
