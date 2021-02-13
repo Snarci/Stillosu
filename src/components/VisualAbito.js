@@ -91,7 +91,7 @@ const VisualAbito = () =>{
       </Quadro>
       <Info>
         <Type>Nome: {location.state.nomer}</Type>
-        <Type>Tipo: {location.state.tipor}</Type>
+        <Type>Tiologia: {location.state.tipor}</Type>
       </Info>
       <Button>
         <Type>Genera un Outfit</Type>
