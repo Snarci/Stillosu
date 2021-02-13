@@ -36,7 +36,7 @@ const Img = styled.img`
   margin: 16px 0px 6px 0px;
 `;
 const Mex = styled.div`
-  border: 1px solid;
+  border: 0px solid;
   border-radius: 15px;
   padding: 5px;
   width: 60%;
@@ -46,7 +46,7 @@ const Mex = styled.div`
   background-color: #ffddd2;
 `;
 const MexH1 = styled.h1`
-	font-size: 1em;
+	font-size: 1.25em;
   margin: 8px 0px 8px 0px;
 `;
 const Form = styled.form`
@@ -62,10 +62,10 @@ const InputImgContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
-  background-color: #EDF6F9;
+  background-color: rgba(237, 246, 249,0.8);
   margin: 5px;
   border-radius: 10px;
-  border: 1px solid;
+  border: 0px solid;
 `;
 const InputImg = styled.img`
  	height: 33px;
@@ -77,7 +77,7 @@ const Input = styled.input`
 	width: 75%;
   border-width:0px;
   border:none;
-  background-color: #EDF6F9;
+  background-color: transparent;
 	height: 50px;
   font-size: 100%; 
   font-weight: bold;
@@ -90,7 +90,7 @@ const SButton = styled.button`
   font-size: 130%;
   font-weight: bold;
   background-color: #e29578;
-  border: 1px solid;
+  border: 0px solid;
 `;
 const SubmitC = styled.div`
 	display: flex;
