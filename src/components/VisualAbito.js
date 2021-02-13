@@ -4,7 +4,11 @@ import { useHistory } from "react-router-dom";
 
 import Header from "./Header";
 
-import image from "../res/pp.jpg";
+import image1 from "../res/pp.jpg";
+
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 
 const Container = styled.div`
 	height: 100vh;
@@ -57,7 +61,15 @@ const Button = styled.button`
   box-shadow: 1px 1px 20px 1px #333333;
   background-color: rgb(226,149,120,0.9);
 `;
-const VisualAbito = () =>{
+
+const VisualAbito = (image, nome,id,tipo) =>{
+  //importante
+  const location = useLocation();
+
+
+  console.log("Infos",image,nome,id,tipo);
+  console.log("Il this:",this);
+  
 	const history = useHistory();
 	const handleClickBack = () =>{
     history.push("/armadio")
@@ -66,11 +78,11 @@ const VisualAbito = () =>{
 		<Container>
 			<Header leftFun={handleClickBack}/>
       <Quadro>
-        <Img src={image} />
+        <Img src={location.state.imager} />
       </Quadro>
       <Info>
-        <Type>Tipologia: Maglietta</Type>
-        <Type>Colore : Rosso</Type>
+        <Type>Nome: {location.state.nomer}</Type>
+        <Type>Tipo: {location.state.tipor}</Type>
       </Info>
       <Button>
         <Type>Genera un Outfit</Type>

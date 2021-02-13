@@ -1,6 +1,6 @@
-import React from 'react'
 import styled from "styled-components/macro";
-
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 const Container = styled.button`
   width: 16vh;
   height: 18vh;
@@ -27,11 +27,25 @@ const Text = styled.h1`
   margin: auto;
 `;
 
-const Abito = ({ image, nome}) => (
-  <Container>
+const Abito = ({ image, nome,id,tipo}) => {
+  const history = useHistory();
+	const handleClick = () =>{
+    history.push({
+      pathname: "/visual",
+      state:{ 
+        nomer:nome,
+        imager:image,
+        idr:id,
+        tipor:tipo
+      }});
+      console.log("InfosABITO",image,nome,id,tipo);
+      
+	};
+  return(
+  <Container onClick={handleClick}>
     <Img src={image} />
     <Text>{nome}</Text>
   </Container>
 );
-
+};
 export default Abito;

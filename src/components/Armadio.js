@@ -87,7 +87,7 @@ const Armadio = () =>{
           console.log(abitifiltrati.immagine);
           return(
           <Abitcontainer>
-            <Abito image={abitifiltrati.immagine} nome={abitifiltrati.nome}/>
+            <Abito image={abitifiltrati.immagine} nome={abitifiltrati.nome} tipo={abitifiltrati.tipo} id={abitifiltrati.id}/>
           </Abitcontainer>
            )
           }
