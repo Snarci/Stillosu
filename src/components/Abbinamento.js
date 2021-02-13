@@ -7,7 +7,6 @@ import Header from "./Header";
 import {abiti} from "../utils/date";
 
 import arrow from "../res/back.svg";
-import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const Container = styled.div`

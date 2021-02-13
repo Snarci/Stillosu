@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components/macro";
 import {
   BrowserRouter as Router,
@@ -21,35 +21,39 @@ const Container = styled.div`
 
 `;
 
-const App = () => ( 
-  <Router>
-    <Switch> 
-      <Route path="/visual">
-        <Visual />
-      </Route>
-      <Route path="/home">
-        <Home />
-      </Route>
-      <Route path="/armadio">
-        <Armadio />
-      </Route>
-      <Route path="/abbinamento">
-        <Abbinamento />
-      </Route>
-      <Route path="/photo-add">
-        <Camera />
-      </Route>
-      <Route path="/register">
-        <Register />
-      </Route>
-      <Route path="/login">
-        <Login />
-      </Route>
-      <Route path="/">
-        <PrimaPagina />
-      </Route>
-    </Switch>
-  </Router>
-);
+const App = () => {
 
+  const [mailC,setMail] = useState("admin");
+  const [passwordC,setPassword] = useState("admin");
+  return(
+    <Router>
+      <Switch> 
+        <Route path="/visual">
+          <Visual />
+        </Route>
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/armadio">
+          <Armadio />
+        </Route>
+        <Route path="/abbinamento">
+          <Abbinamento />
+        </Route>
+        <Route path="/photo-add">
+          <Camera />
+        </Route>
+        <Route path="/register">
+          <Register setPasswordF={setPassword} setMailF={setMail}/>
+        </Route>
+        <Route path="/login">
+          <Login mailC={mailC} passwordC={passwordC} />
+        </Route>
+        <Route path="/">
+          <PrimaPagina />
+        </Route>
+      </Switch>
+    </Router>
+);
+} 
 export default App;

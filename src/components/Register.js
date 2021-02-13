@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components/macro";
 import { useHistory } from "react-router-dom";
 
-import armadio from "../res/armadio.svg";
 import password from "../res/lock.svg";
 import user from "../res/user.svg";
 import mail from "../res/mail.svg";
@@ -105,11 +104,23 @@ const RegText = styled.h1`
   text-decoration: underline;
 `;
 
-const Register = () => {
+const Register = ( {setPasswordF , setMailF }) => {
+  const [mailS,setMailS] = useState("");
+  const [passwordS,setPasswordS] = useState("");
+  const [passwordSC,setPasswordSC] = useState("");
 	const history = useHistory();
-	const handleClickR = () =>(
-			history.push("/login")
-	);
+	const handleClickR = () =>{
+    if(passwordS===passwordSC){
+      setPasswordF(passwordS);
+      setMailF(mailS);
+      console.log("Register result");
+      console.log(passwordS);
+      console.log(mailS);
+      history.push("/login")
+    }else{
+      console.log("qualcosa non va")
+    }
+  };
 	const handleClickL = () =>(
 		history.push("/")
 );
@@ -129,15 +140,15 @@ const Register = () => {
       	</InputImgContainer>
       	<InputImgContainer>
         	<InputImg src={mail} />
-        	<Input type="text" id="fname" name="fname" placeholder="Email" />
+        	<Input type="text" id="fname" name="fname" placeholder="Email" onChange={event => setMailS(event.target.value)}/>
       	</InputImgContainer>
       	<InputImgContainer>
       	  <InputImg src={password} />
-     	    <Input type="password" id="lname" name="lname" placeholder="Password" />
+     	    <Input type="password" id="lname" name="lname" placeholder="Password" onChange={event => setPasswordS(event.target.value)}/>
       	</InputImgContainer>
 	  	<InputImgContainer>
         	<InputImg src={password} />
-        	<Input type="password" id="lname" name="lname" placeholder="Conferma password" />
+        	<Input type="password" id="lname" name="lname" placeholder="Conferma password" onChange={event => setPasswordSC(event.target.value)}/>
       	</InputImgContainer>
     	</Form>
     	<SubmitC>
