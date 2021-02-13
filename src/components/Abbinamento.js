@@ -142,6 +142,18 @@ const Abbinamento = () =>{
       setIdS(4)
     }
   };
+  const handleClick = (nome,image,id,tipo,cond) =>{
+    history.push({
+      pathname: "/visual",
+      state:{ 
+        nomer:nome,
+        imager:image,
+        idr:id,
+        tipor:tipo,
+        condr:cond
+      }});
+      
+	};
 	return(
 		<Container>
 			<Header leftFun={handleClickBack}/>
@@ -153,7 +165,8 @@ const Abbinamento = () =>{
           <Circle onClick={IndietroC}>
             <Icon src={arrow} />
           </Circle>
-          <Quadro>
+          <Quadro onClick={() => abiti.filter(abito => abito.id===capelloid).filter(abito => abito.nome.includes("capello")).map(abitifiltrati => {
+            handleClick(abitifiltrati.nome,abitifiltrati.immagine,abitifiltrati.id,abitifiltrati.tipo,true)  })}>  
             {
               abiti.filter(abito => abito.id===capelloid).filter(abito => abito.nome.includes("capello")).map(abitifiltrati => {
               console.log(abitifiltrati.immagine);
@@ -172,7 +185,8 @@ const Abbinamento = () =>{
           <Circle onClick={IndietroM}>
             <Icon src={arrow}/>
           </Circle>
-          <Quadro>
+          <Quadro onClick={() => abiti.filter(abito => abito.id===magliettaid).filter(abito => abito.nome.includes("maglietta")).map(abitifiltrati => {
+            handleClick(abitifiltrati.nome,abitifiltrati.immagine,abitifiltrati.id,abitifiltrati.tipo,true)  })}>
             {
               abiti.filter(abito => abito.id===magliettaid).filter(abito => abito.nome.includes("maglietta")).map(abitifiltrati => {
               console.log(abitifiltrati.immagine);
@@ -190,7 +204,8 @@ const Abbinamento = () =>{
           <Circle onClick={IndietroP}>
             <Icon src={arrow} />
           </Circle>
-          <Quadro>
+          <Quadro onClick={() => abiti.filter(abito => abito.id===pantaloneid).filter(abito => abito.nome.includes("pantalone")).map(abitifiltrati => {
+            handleClick(abitifiltrati.nome,abitifiltrati.immagine,abitifiltrati.id,abitifiltrati.tipo,true)  })}>
             {
               abiti.filter(abito => abito.id===pantaloneid).filter(abito => abito.nome.includes("pantalone")).map(abitifiltrati => {
               console.log(abitifiltrati.immagine);
@@ -208,7 +223,8 @@ const Abbinamento = () =>{
           <Circle onClick={IndietroS}>
             <Icon src={arrow} />
           </Circle>
-          <Quadro>
+          <Quadro onClick={() => abiti.filter(abito => abito.id===scarpeid).filter(abito => abito.nome.includes("scarpe")).map(abitifiltrati => {
+            handleClick(abitifiltrati.nome,abitifiltrati.immagine,abitifiltrati.id,abitifiltrati.tipo,true)  })}>
             {
               abiti.filter(abito => abito.id===scarpeid).filter(abito => abito.nome.includes("scarpe")).map(abitifiltrati => {
               console.log(abitifiltrati.immagine);

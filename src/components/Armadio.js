@@ -72,7 +72,7 @@ const Armadio = () =>{
   const [filtro,setFiltro] = useState("");
   console.log(abiti);
 	return(
-    console.log({filtro}),
+  
 		<Container>
 			<Header leftFun={handleClickBack}/>
       <Filto>
@@ -84,7 +84,7 @@ const Armadio = () =>{
       <Anta>
         {
          abiti.filter(abito => abito.nome.includes(filtro)).map(abitifiltrati => {
-          console.log(abitifiltrati.immagine);
+         
           return(
           <Abitcontainer>
             <Abito image={abitifiltrati.immagine} nome={abitifiltrati.nome} tipo={abitifiltrati.tipo} id={abitifiltrati.id}/>

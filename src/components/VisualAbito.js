@@ -62,17 +62,18 @@ const Button = styled.button`
   background-color: rgb(226,149,120,0.9);
 `;
 
-const VisualAbito = (image, nome,id,tipo) =>{
+const VisualAbito = (image, nome,id,tipo,condBack) =>{
   //importante
   const location = useLocation();
-
-
-  console.log("Infos",image,nome,id,tipo);
-  console.log("Il this:",this);
   
 	const history = useHistory();
 	const handleClickBack = () =>{
-    history.push("/armadio")
+    console.clear();
+    console.log("yammeya ");
+    console.log(location.state.condr);
+    if(location.state.condr){history.push("/abbinamento");}
+    else{history.push("/armadio");}
+    
 	};
 	return(
 		<Container>
