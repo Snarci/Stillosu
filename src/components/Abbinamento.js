@@ -4,6 +4,8 @@ import { useHistory } from "react-router-dom";
 
 import Header from "./Header";
 
+import image from "../res/pp.jpg";
+
 
 const Container = styled.div`
 	height: 100vh;
@@ -15,7 +17,38 @@ const Container = styled.div`
   background-attachment: fixed;
   background-size: cover;
 `;
-
+const Quadro = styled.div`
+  height: 15vh;
+  width: 15vh;
+  border: 3px solid;
+  border-radius: 15px;
+  border-color: #e29578;
+  margin: auto ;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+`;
+const Img = styled.img`
+  height: 100%;
+  border-radius: 15px;
+  margin: auto;
+`;
+const Info = styled.div`
+  height: 3vh;
+  width: 70%;
+  border: 3px solid;
+  border-radius: 15px;
+  border-color: #e29578;
+  margin: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+`;
+const Text = styled.h1`
+  margin:auto;
+  font-size: 1em;
+`;
 const Abbinamento = () =>{
 	const history = useHistory();
 	const handleClickBack = () =>{
@@ -24,6 +57,21 @@ const Abbinamento = () =>{
 	return(
 		<Container>
 			<Header leftFun={handleClickBack}/>
+      <Info>
+        <Text>Scorri a sinistra per abbinare</Text>
+      </Info>
+      <Quadro>
+        <Img src={image} />
+      </Quadro>
+      <Quadro>
+        <Img src={image} />
+      </Quadro>
+      <Quadro>
+        <Img src={image} /> 
+      </Quadro>
+      <Quadro>
+        <Img src={image} />
+      </Quadro>
 		</Container>
 	);
 };
