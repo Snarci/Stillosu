@@ -7,6 +7,8 @@ import Header from "./Header";
 import {abiti} from "../utils/date";
 
 import arrow from "../res/back.svg";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const Container = styled.div`
 	height: 100vh;
@@ -75,14 +77,40 @@ const Icon = styled.img`
   transform: ${(props) => (props.condition === 'gira' ? 'scale(-1, 1)' : 'scale(1, 1)')};
 `;
 const Abbinamento = () =>{
+  const location = useLocation();
 	const history = useHistory();
 	const handleClickBack = () =>{
     history.push("/home")
 	};
-  const [capelloid,setIdC] = useState(1);
-  const [magliettaid,setIdM] = useState(1);
-  const [pantaloneid,setIdP] = useState(1);
-  const [scarpeid,setIdS] = useState(1);
+  /*
+  const [capelloid,setIdC] = useState(location.state.capelloidr);
+  const [magliettaid,setIdM] = useState(location.state.magliettaid);
+  const [pantaloneid,setIdP] = useState(location.state.pantaloneidr);
+  const [scarpeid,setIdS] = useState(location.state.scarpeidr);
+
+
+*/
+ 
+  
+ const [capelloid,setIdC] = useState(() => 
+ {if(location.state==null) { return 1} else { return location.state.capelloidr;}});
+  const [magliettaid,setIdM] =  useState(() => 
+  {if(location.state==null) { return 1} else { return location.state.magliettaid;}});
+  const [pantaloneid,setIdP] =  useState(() => 
+  {if(location.state==null) { return 1} else { return location.state.pantaloneidr;}});
+  const [scarpeid,setIdS] =  useState(() => 
+  {if(location.state==null) { return 1} else { return location.state.scarpeidr;}});
+/*
+  const [capelloid,setIdC] = useState(location.state.capelloidr);
+  const [magliettaid,setIdM] = useState(location.state.magliettaid);
+  const [pantaloneid,setIdP] = useState(location.state.pantaloneidr);
+  const [scarpeid,setIdS] = useState(location.state.scarpeidr);
+*/
+
+
+
+ 
+
 
   const AvantiC = () => {
     if (capelloid!=4){
@@ -142,6 +170,23 @@ const Abbinamento = () =>{
       setIdS(4)
     }
   };
+  const handleClick = (nome,image,id,tipo,cond) =>{
+    history.push({
+      pathname: "/visual",
+      state:{ 
+        nomer:nome,
+        imager:image,
+        idr:id,
+        tipor:tipo,
+        condr:cond,
+        idpr:pantaloneid,
+        idmr:magliettaid,
+        idsr:scarpeid,
+        idcr:capelloid
+      }});
+      console.log("marameo");
+      console.log(scarpeid);
+	};
 	return(
 		<Container>
 			<Header leftFun={handleClickBack}/>
@@ -153,7 +198,8 @@ const Abbinamento = () =>{
           <Circle onClick={IndietroC}>
             <Icon src={arrow} />
           </Circle>
-          <Quadro>
+          <Quadro onClick={() => abiti.filter(abito => abito.id===capelloid).filter(abito => abito.nome.includes("capello")).map(abitifiltrati => {
+            handleClick(abitifiltrati.nome,abitifiltrati.immagine,abitifiltrati.id,abitifiltrati.tipo,true)  })}>  
             {
               abiti.filter(abito => abito.id===capelloid).filter(abito => abito.nome.includes("capello")).map(abitifiltrati => {
               console.log(abitifiltrati.immagine);
@@ -172,7 +218,8 @@ const Abbinamento = () =>{
           <Circle onClick={IndietroM}>
             <Icon src={arrow}/>
           </Circle>
-          <Quadro>
+          <Quadro onClick={() => abiti.filter(abito => abito.id===magliettaid).filter(abito => abito.nome.includes("maglietta")).map(abitifiltrati => {
+            handleClick(abitifiltrati.nome,abitifiltrati.immagine,abitifiltrati.id,abitifiltrati.tipo,true)  })}>
             {
               abiti.filter(abito => abito.id===magliettaid).filter(abito => abito.nome.includes("maglietta")).map(abitifiltrati => {
               console.log(abitifiltrati.immagine);
@@ -190,7 +237,8 @@ const Abbinamento = () =>{
           <Circle onClick={IndietroP}>
             <Icon src={arrow} />
           </Circle>
-          <Quadro>
+          <Quadro onClick={() => abiti.filter(abito => abito.id===pantaloneid).filter(abito => abito.nome.includes("pantalone")).map(abitifiltrati => {
+            handleClick(abitifiltrati.nome,abitifiltrati.immagine,abitifiltrati.id,abitifiltrati.tipo,true)  })}>
             {
               abiti.filter(abito => abito.id===pantaloneid).filter(abito => abito.nome.includes("pantalone")).map(abitifiltrati => {
               console.log(abitifiltrati.immagine);
@@ -208,7 +256,8 @@ const Abbinamento = () =>{
           <Circle onClick={IndietroS}>
             <Icon src={arrow} />
           </Circle>
-          <Quadro>
+          <Quadro onClick={() => abiti.filter(abito => abito.id===scarpeid).filter(abito => abito.nome.includes("scarpe")).map(abitifiltrati => {
+            handleClick(abitifiltrati.nome,abitifiltrati.immagine,abitifiltrati.id,abitifiltrati.tipo,true)  })}>
             {
               abiti.filter(abito => abito.id===scarpeid).filter(abito => abito.nome.includes("scarpe")).map(abitifiltrati => {
               console.log(abitifiltrati.immagine);
