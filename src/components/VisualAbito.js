@@ -62,7 +62,7 @@ const Button = styled.button`
   background-color: rgb(226,149,120,0.9);
 `;
 
-const VisualAbito = (image, nome,id,tipo,condBack) =>{
+const VisualAbito = () =>{
   //importante
   const location = useLocation();
   
@@ -71,7 +71,15 @@ const VisualAbito = (image, nome,id,tipo,condBack) =>{
     console.clear();
     console.log("yammeya ");
     console.log(location.state.condr);
-    if(location.state.condr){history.push("/abbinamento");}
+    if(location.state.condr){history.push({
+      pathname: "/abbinamento",
+      state:{ 
+        scarpeidr:location.state.idsr,
+        capelloidr:location.state.idcr,
+        magliettaid:location.state.idmr,
+        pantaloneidr:location.state.idpr
+      }});
+      console.log(location.state.idsr);}
     else{history.push("/armadio");}
     
 	};
