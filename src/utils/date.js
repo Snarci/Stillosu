@@ -33,124 +33,124 @@ import React from 'react';
 
 export const abiti = [
   {
-    "nome": "maglietta",
+    "nome": "Maglietta Nera/Blu",
     "tipo": "maglietta",
     "immagine": T1,
     "id": 1
   },
   {
-    "nome": "maglietta",
+    "nome": "Maglietta Kodak",
     "tipo": "maglietta",
     "immagine": T2,
     "id": 2
   },
   {
-    "nome": "maglietta",
+    "nome": "Maglietta Rullino",
     "tipo": "maglietta",
     "immagine": T3,
     "id": 3
     
   },
   {
-    "nome": "maglietta",
+    "nome": "Maglietta Nera",
     "tipo": "maglietta",
     "immagine": T4,
     "id": 4
   },
   {
-    "nome": "maglietta",
+    "nome": "Maglione Grigio",
     "tipo": "maglietta",
     "immagine": M1,
     "id": 5
   },
   {
-    "nome": "maglietta",
+    "nome": "Maglione a Striscie",
     "tipo": "maglietta",
     "immagine": M2,
     "id": 6
   },
   {
-    "nome": "maglietta",
+    "nome": "Maglione Marrone",
     "tipo": "maglietta",
     "immagine": M3,
     "id": 7
   },
   {
-    "nome": "maglietta",
+    "nome": "Maglione Nero",
     "tipo": "maglietta",
     "immagine": M4,
     "id": 8
   },
   {
-    "nome": "pantalone",
+    "nome": "Pantalone Nero",
     "tipo": "pantalone",
     "immagine": P1,
     "id": 1
   },
   {
-    "nome": "pantalone",
+    "nome": "Jeans blue",
     "tipo": "pantalone",
     "immagine": P2,
     "id": 2
   },
   {
-    "nome": "pantalone",
+    "nome": "Jeans Nero",
     "tipo": "pantalone",
     "immagine": P3,
     "id": 3
   },
   {
-    "nome": "pantalone",
+    "nome": "pantalone Marrone",
     "tipo": "pantalone",
     "immagine": P4,
     "id": 4
   }
   ,
   {
-    "nome": "scarpe",
+    "nome": "Scarpe Arancioni",
     "tipo": "scarpe",
     "immagine": S1,
     "id": 1
   },
   {
-    "nome": "scarpe",
+    "nome": "Scarpe Grigie",
     "tipo": "scarpe",
     "immagine": S2,
     "id": 2
   },
   {
-    "nome": "scarpe",
+    "nome": "Mocassini Neri",
     "tipo": "scarpe",
     "immagine": S3,
     "id": 3
   },
   {
-    "nome": "scarpe",
+    "nome": "Running Blue",
     "tipo": "scarpe",
     "immagine": S4,
     "id": 4
   }
   ,
   {
-    "nome": "capello",
+    "nome": "Capellino Bianco",
     "tipo": "capello",
     "immagine": C1,
     "id": 1
   },
   {
-    "nome": "capello",
+    "nome": "Cufietta Nera",
     "tipo": "capello",
     "immagine": C2,
     "id": 2
   },
   {
-    "nome": "capello",
+    "nome": "Capello Old School",
     "tipo": "capello",
     "immagine": C3,
     "id": 3
   },
   {
-    "nome": "capello",
+    "nome": "Cufietta Marrone",
     "tipo": "capello",
     "immagine": C4,
     "id": 4

@@ -83,7 +83,7 @@ const Armadio = () =>{
       </Filto>
       <Anta>
         {
-         abiti.filter(abito => abito.nome.includes(filtro)).map(abitifiltrati => {
+         abiti.filter(abito => abito.tipo.includes(filtro)).map(abitifiltrati => {
          
           return(
           <Abitcontainer>

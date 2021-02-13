@@ -10,7 +10,6 @@ import logo from "../res/logov3.svg";
 
 const Container = styled.div`
 	height: 100vh;
-	
 	display: flex;
 	flex-direction: column;
   justify-content: space-around;
@@ -18,6 +17,7 @@ const Container = styled.div`
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23e8d9ce' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23d1d4ca' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23b8cfc6' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%239fcac2' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%2383c5be' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
   background-attachment: fixed;
   background-size: cover;
+  overflow: scroll;
 `;
 const ContainerImg = styled.div`
   display: flex;
@@ -75,6 +75,7 @@ const InputImg = styled.img`
 `;
 const Input = styled.input`
 	width: 75%;
+  outline: none;
   border-width:0px;
   border:none;
   background-color: transparent;
@@ -84,6 +85,7 @@ const Input = styled.input`
 `;
 const SButton = styled.button`
 	width: 70%;
+  outline: none;
 	margin: auto;
   border-radius: 10px;
   height: 45px;
