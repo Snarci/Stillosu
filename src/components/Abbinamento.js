@@ -85,31 +85,61 @@ const Abbinamento = () =>{
   const [scarpeid,setIdS] = useState(1);
 
   const AvantiC = () => {
-    if (capelloid<4){
+    if (capelloid!=4){
       setIdC(capelloid+1) 
     }else{
       setIdC(1)
     }
   };
   const AvantiM = () => {
-    if (magliettaid<8){
+    if (magliettaid!=8){
       setIdM(magliettaid+1) 
     }else{
       setIdM(1)
     }
   };
   const AvantiP = () => {
-    if (pantaloneid<4){
+    if (pantaloneid!=4){
       setIdP(pantaloneid+1) 
     }else{
       setIdP(1)
     }
   };
   const AvantiS = () => {
-    if (scarpeid<4){
+    if (scarpeid!=4){
       setIdS(scarpeid+1) 
     }else{
       setIdS(1)
+    }
+  };
+  //funzioni buttons indietro
+  const IndietroC = () => {
+  
+    if (capelloid!=1){
+      setIdC(capelloid-1) 
+    }else{
+      setIdC(4)
+    }
+  };
+  const IndietroM = () => {
+    if (magliettaid!=1){
+      setIdM(magliettaid-1) 
+    }else{
+      setIdM(8)
+    }
+  };
+  const IndietroP = () => {
+    if (pantaloneid!=1){
+      setIdP(pantaloneid-1) 
+    }else{
+      setIdP(4)
+    }
+  };
+  const IndietroS = () => {
+    if (scarpeid!=1){
+      setIdS(scarpeid-1) 
+    }else{
+      setIdS(4)
     }
   };
 	return(
@@ -120,7 +150,7 @@ const Abbinamento = () =>{
       </Info>
       <ContainerOutfit>
         <ContainerQP>
-          <Circle>
+          <Circle onClick={IndietroC}>
             <Icon src={arrow} />
           </Circle>
           <Quadro>
@@ -139,7 +169,7 @@ const Abbinamento = () =>{
           </Circle>
         </ContainerQP>
         <ContainerQP>
-          <Circle>
+          <Circle onClick={IndietroM}>
             <Icon src={arrow}/>
           </Circle>
           <Quadro>
@@ -157,7 +187,7 @@ const Abbinamento = () =>{
             <Icon src={arrow} condition={"gira"}/>
           </Circle>
         </ContainerQP><ContainerQP>
-          <Circle>
+          <Circle onClick={IndietroP}>
             <Icon src={arrow} />
           </Circle>
           <Quadro>
@@ -175,7 +205,7 @@ const Abbinamento = () =>{
             <Icon src={arrow} condition={"gira"}/>
           </Circle>
         </ContainerQP><ContainerQP>
-          <Circle>
+          <Circle onClick={IndietroS}>
             <Icon src={arrow} />
           </Circle>
           <Quadro>
