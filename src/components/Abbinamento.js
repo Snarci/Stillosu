@@ -49,6 +49,13 @@ const Text = styled.h1`
   margin:auto;
   font-size: 1em;
 `;
+const ContainerOutfit = styled.div`
+  width: 50%;
+  height: 80vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+`;
 const Abbinamento = () =>{
 	const history = useHistory();
 	const handleClickBack = () =>{
@@ -60,18 +67,20 @@ const Abbinamento = () =>{
       <Info>
         <Text>Scorri a sinistra per abbinare</Text>
       </Info>
-      <Quadro>
-        <Img src={image} />
-      </Quadro>
-      <Quadro>
-        <Img src={image} />
-      </Quadro>
-      <Quadro>
-        <Img src={image} /> 
-      </Quadro>
-      <Quadro>
-        <Img src={image} />
-      </Quadro>
+      <ContainerOutfit>
+        <Quadro>
+          <Img src={image} />
+        </Quadro>
+        <Quadro>
+          <Img src={image} />
+        </Quadro>
+        <Quadro>
+          <Img src={image} /> 
+        </Quadro>
+        <Quadro>
+          <Img src={image} />
+        </Quadro>
+      </ContainerOutfit>
 		</Container>
 	);
 };
