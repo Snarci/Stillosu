@@ -34,84 +34,105 @@ import React from 'react';
 export const abiti = [
   {
     "nome": "maglietta",
-    "immagine": T1
+    "immagine": T1,
+    "id": 1
   },
   {
     "nome": "maglietta",
-    "immagine": T2
+    "immagine": T2,
+    "id": 2
   },
   {
     "nome": "maglietta",
-    "immagine": T3
+    "immagine": T3,
+    "id": 3
+    
   },
   {
     "nome": "maglietta",
-    "immagine": T4
+    "immagine": T4,
+    "id": 4
   },
   {
     "nome": "maglietta",
-    "immagine": M1
+    "immagine": M1,
+    "id": 5
   },
   {
     "nome": "maglietta",
-    "immagine": M2
+    "immagine": M2,
+    "id": 6
   },
   {
     "nome": "maglietta",
-    "immagine": M3
+    "immagine": M3,
+    "id": 7
   },
   {
     "nome": "maglietta",
-    "immagine": M4
+    "immagine": M4,
+    "id": 8
   },
   {
     "nome": "pantalone",
-    "immagine": P1
+    "immagine": P1,
+    "id": 1
   },
   {
     "nome": "pantalone",
-    "immagine": P2
+    "immagine": P2,
+    "id": 2
   },
   {
     "nome": "pantalone",
-    "immagine": P3
+    "immagine": P3,
+    "id": 3
   },
   {
     "nome": "pantalone",
-    "immagine": P4
+    "immagine": P4,
+    "id": 4
   }
   ,
   {
     "nome": "scarpe",
-    "immagine": S1
+    "immagine": S1,
+    "id": 1
   },
   {
     "nome": "scarpe",
-    "immagine": S2
+    "immagine": S2,
+    "id": 2
   },
   {
     "nome": "scarpe",
-    "immagine": S3
+    "immagine": S3,
+    "id": 3
   },
   {
     "nome": "scarpe",
-    "immagine": S4
+    "immagine": S4,
+    "id": 4
   }
   ,
   {
     "nome": "capello",
-    "immagine": C1
+    "immagine": C1,
+    "id": 1
   },
   {
     "nome": "capello",
-    "immagine": C2
+    "immagine": C2,
+    "id": 2
   },
   {
     "nome": "capello",
-    "immagine": C3
+    "immagine": C3,
+    "id": 3
   },
   {
     "nome": "giacca",
-    "immagine": C4
+    "immagine": C4,
+    "id": 4
   }
 ];

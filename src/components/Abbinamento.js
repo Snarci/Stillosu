@@ -35,9 +35,9 @@ const Quadro = styled.div`
   overflow-x: scroll;
 `;
 const Img = styled.img`
-  height: 100%;
-  border-radius: 15px;
-  margin: auto;
+  width: 100%;
+  padding-bottom: 30px;
+ 
 `;
 const Info = styled.div`
   height: 3vh;
