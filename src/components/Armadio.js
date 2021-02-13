@@ -60,6 +60,10 @@ const Input = styled.input`
   font-weight: bold;
   margin: auto;
 `;
+const Abitcontainer = styled.div`
+  margin: auto;
+  padding: 4px;
+`;
 const Armadio = () =>{
 	const history = useHistory();
 	const handleClickBack = () =>{
@@ -82,7 +86,9 @@ const Armadio = () =>{
          abiti.filter(abito => abito.nome.includes(filtro)).map(abitifiltrati => {
           console.log(abitifiltrati.immagine);
           return(
-          <Abito image={abitifiltrati.immagine} nome={abitifiltrati.nome}/>
+          <Abitcontainer>
+            <Abito image={abitifiltrati.immagine} nome={abitifiltrati.nome}/>
+          </Abitcontainer>
            )
           }
           )

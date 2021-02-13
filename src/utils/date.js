@@ -33,68 +33,68 @@ import React from 'react';
 
 export const abiti = [
   {
-    "nome": "capello",
+    "nome": "maglietta",
     "immagine": T1
   },
   {
-    "nome": "capello",
+    "nome": "maglietta",
     "immagine": T2
   },
   {
-    "nome": "capello",
+    "nome": "maglietta",
     "immagine": T3
   },
   {
-    "nome": "giacca",
+    "nome": "maglietta",
     "immagine": T4
   },
   {
-    "nome": "capello",
+    "nome": "maglietta",
     "immagine": M1
   },
   {
-    "nome": "capello",
+    "nome": "maglietta",
     "immagine": M2
   },
   {
-    "nome": "capello",
+    "nome": "maglietta",
     "immagine": M3
   },
   {
-    "nome": "giacca",
+    "nome": "maglietta",
     "immagine": M4
   },
   {
-    "nome": "capello",
+    "nome": "pantalone",
     "immagine": P1
   },
   {
-    "nome": "capello",
+    "nome": "pantalone",
     "immagine": P2
   },
   {
-    "nome": "capello",
+    "nome": "pantalone",
     "immagine": P3
   },
   {
-    "nome": "giacca",
+    "nome": "pantalone",
     "immagine": P4
   }
   ,
   {
-    "nome": "capello",
+    "nome": "scarpe",
     "immagine": S1
   },
   {
-    "nome": "capello",
+    "nome": "scarpe",
     "immagine": S2
   },
   {
-    "nome": "capello",
+    "nome": "scarpe",
     "immagine": S3
   },
   {
-    "nome": "giacca",
+    "nome": "scarpe",
     "immagine": S4
   }
   ,
