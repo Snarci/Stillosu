@@ -46,7 +46,7 @@ const Mex = styled.div`
   
 `;
 const MexH1 = styled.h1`
-//	background-color: rgba(237, 246, 249,0.8);
+//background-color: rgba(237, 246, 249,0.8);
 	font-size: 1.3em;
   margin: 8px 0px 8px 0px;
 `;
@@ -108,7 +108,7 @@ const RegText = styled.h1`
 const Login = () => {
 	const history = useHistory();
 	const handleClickR = () =>(
-			history.push("/register")
+		history.push("/register")
 	);
 	const handleClickA = () =>(
 		history.push("/home")
