@@ -8,7 +8,7 @@ import armadio from "../res/armadio.svg";
 import camera from "../res/camera.svg";
 import capello from "../res/capello.svg";
 import gruccia from "../res/gruccia.svg"
-import user from "../res/user.svg";
+import hot from "../res/hot.svg";
 
 
 const Container = styled.div`
@@ -32,6 +32,7 @@ const SubMenuContainer = styled.button`
 	flex-direction: column;
   justify-content: center;
   margin: auto; 
+  box-shadow: 1px 1px 7px 1px #333333;
 `;
 const Text = styled.h1`
   align-self: center;
@@ -47,7 +48,7 @@ const Img = styled.img`
 const Home = () => {
 	const history = useHistory();
 	const handleClickCamera = () =>(
-			history.push("/photo-add")
+		history.push("/photo-add")
 	);
 	const handleClickAbbinameto = () =>(
 		history.push("/abbinamento")
@@ -78,7 +79,7 @@ const Home = () => {
       	</SubMenuContainer>
 				<SubMenuContainer onClick={handleClickOutfit}>
         	<Text>Outfit di tendenza</Text>
-        	<Img src={user} />
+        	<Img src={hot} />
       	</SubMenuContainer>
   	</Container>
 	);

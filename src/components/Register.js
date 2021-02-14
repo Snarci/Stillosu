@@ -9,9 +9,6 @@ import user from "../res/user.svg";
 import mail from "../res/mail.svg";
 import logo from "../res/logov3.svg";
 
-const ShakeExt = styled(Shake)`
-
-`;
 
 const Container = styled.div`
 	height: 100vh;
@@ -71,7 +68,7 @@ const InputImgContainer = styled.div`
   margin: 5px;
   border-radius: 10px;
   border: 0px solid;
-  box-shadow: ${(props) => (props.condition ? '0 0 0.5em red' : 'none')};
+  box-shadow: ${(props) => (props.condition ? '1px 1px 7px 1px red' : '1px 1px 7px 1px #333333')};
 `;
 const InputImg = styled.img`
  	height: 33px;
@@ -102,6 +99,7 @@ const SButton = styled.button`
   font-weight: bold;
   background-color: #e29578;
   border: 0px solid;
+  box-shadow: 1px 1px 7px 1px #333333;
 `;
 const SubmitC = styled.div`
 	display: flex;
@@ -170,7 +168,7 @@ const Register = ( {setPasswordF , setMailF }) => {
     	</Mex>
       <Shake
         playState={erroreGenerale ? 'running' : 'none'}
-        onAnimationEnd={() => setErroreGenerale(true)} >
+        onAnimationEnd={() => setErroreGenerale(false)} >
     	  <Form>
 		      <InputImgContainer condition={erroreU}>
       	    <InputImg src={user} />

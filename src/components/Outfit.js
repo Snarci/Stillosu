@@ -44,6 +44,7 @@ const Circle = styled.button`
 	display: flex;
 	align-items: center;
 	outline:none;
+  box-shadow: 1px 1px 7px 1px #333333;
 `;
 const Icon = styled.img`
 	height: 4vh;
@@ -64,14 +65,53 @@ const ButtonContainer = styled.div`
   margin: auto;
   width: 100%;
 `;
+const Info = styled.div`
+  height: 7vh;
+  width: 80%;
+  border: 3px solid;
+  border-radius: 15px;
+  border-color: #e29578;
+  margin: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+`;
+const Text = styled.h1`
+  font-size: 1em;
+  text-align: center;
+  margin: auto;
+`;
 const Outfit = () =>{
+  const history = useHistory();
+  const handleClickBack = () => {
+    history.push("/home")
+	};
+  const [numeroOutfit,setNumero] = useState(1);
+  const AvantiO = () => {
+    if (numeroOutfit!=10){
+      setNumero(numeroOutfit+1) 
+    }else{
+      setNumero(1)
+    }
+  };
+  const IndietroO = () => {
+    if (numeroOutfit!=1){
+      setNumero(numeroOutfit-1) 
+    }else{
+      setNumero(10)
+    }
+  };
+  
 	return(
 		<Container>
-			<Header/>
+			<Header leftFun={handleClickBack}/>
+      <Info>
+        <Text>Premi i pulsanti per sfogliare gli Outfit scelti per te</Text>
+      </Info>
       <ContainerOutfit>
         <Quadro>
             {
-              outfitArray.filter(outfitArray => outfitArray.id===1).map(outfitArray => {
+              outfitArray.filter(outfitArray => outfitArray.id===numeroOutfit).map(outfitArray => {
                 return(
                 <Img src={outfitArray.immagine} />
                 );
@@ -80,10 +120,10 @@ const Outfit = () =>{
         </Quadro>
       </ContainerOutfit>
       <ButtonContainer>
-        <Circle>
+        <Circle onClick={AvantiO}>
         <Icon src={arrow} />
         </Circle>
-        <Circle>
+        <Circle onClick={IndietroO}>
           <Icon src={arrow} condition={"gira"} />
         </Circle>
       </ButtonContainer> 

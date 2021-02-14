@@ -29,7 +29,7 @@ const Img = styled.img`
 	margin: auto;
 `;
 const Header = ({ leftFun }) =>{
-	console.log(leftFun);
+  const history = useHistory();
   const [sideBar, setSide] = useState('closed');
   const openClose = () => {
     if (sideBar === 'opened') {
@@ -40,17 +40,20 @@ const Header = ({ leftFun }) =>{
       console.log('closed');
     }
   };
-	return(
+  
+	const handleClickHome = () =>(
+		history.push("/home")
+	);
+  return(
 	<Container>
     <Side open={openClose} stateSide={sideBar}/>
 		<Circle onClick={leftFun}>
 			<Img src={arrow} />
 		</Circle>
-		<Img src={logo}/>
+		<Img src={logo} onClick={handleClickHome}/>
 		<Circle onClick={openClose}>
 		<Img src={menu} />
 		</Circle>
-
 	</Container>
   
 	);
