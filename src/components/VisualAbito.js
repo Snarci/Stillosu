@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components/macro";
 import { useHistory } from "react-router-dom";
 import { useLocation } from "react-router-dom";
@@ -31,7 +31,7 @@ background-color: rgba(237, 246, 249,0.3);
 `;
 const Info = styled.div`
 background-color: rgba(237, 246, 249,0.3);
-  height: 14vh;
+  height: 35vh;
   width: 80%;
   border: 3px solid;
   border-radius: 15px;
@@ -76,6 +76,15 @@ const VisualAbito = () =>{
   //importante
   const location = useLocation();
 	const history = useHistory();
+  const [capelloid,setIdC] = useState(() => 
+  {if(location.state.tipor==="cappello") {return location.state.idr;} else { return Math.round(1 + Math.random() * (4 - 1));}});
+ const [magliettaid,setIdM] =  useState(() => 
+ {if(location.state.tipor==="maglietta") {return location.state.idr;} else { return Math.round(1 + Math.random() * (8 - 1));}});
+const [pantaloneid,setIdP] =  useState(() => 
+{if(location.state.tipor==="pantalone") {return location.state.idr;} else { return Math.round(1 + Math.random() * (4 - 1));}});
+const [scarpeid,setIdS] =  useState(() => 
+{if(location.state.tipor==="scarpe") {return location.state.idr;} else { return Math.round(1 + Math.random() * (4 - 1));}});
+console.log(1 + Math.random() * (4 - 1));
 	const handleClickBack = () =>{
     console.clear();
     console.log("yammeya ");
@@ -92,6 +101,19 @@ const VisualAbito = () =>{
     else{history.push("/armadio");}
     
 	};
+  const handleCreateOutfit = () =>{
+
+    history.push({
+      pathname: "/abbinamento",
+      state:{ 
+        scarpeidr:scarpeid,
+        capelloidr:capelloid,
+        magliettaid:magliettaid,
+        pantaloneidr:pantaloneid
+      }});
+      
+    
+	};
 	return(
 		<Container>
 			<Header leftFun={handleClickBack}/>
@@ -102,10 +124,11 @@ const VisualAbito = () =>{
         <Type>Nome: {location.state.nomer}</Type>
         <Type>Tipologia: {location.state.tipor}</Type>
         <Type>Colore:</Type>
+        <ColorSemicirle style={{backgroundColor: location.state.color}}></ColorSemicirle>
       </Info>
-      <ColorSemicirle style={{backgroundColor: location.state.color}}></ColorSemicirle>
+      
       <Button condition={location.state.condr}>
-        <Type>Genera un Outfit</Type>
+        <Type onClick={handleCreateOutfit}>Genera un Outfit</Type>
       </Button>
 
 		</Container>
