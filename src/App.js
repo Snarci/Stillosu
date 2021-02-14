@@ -18,6 +18,7 @@ import Camera from "./components/Camera";
 import Visual from "./components/VisualAbito";
 import ConfermaColore from "./components/ConfermaColore";
 import SelezioneInfo from "./components/SelezioneInfo";
+import SelezioneNome from "./components/SelezioneNome";
 
 const Container = styled.div`
 
@@ -56,6 +57,9 @@ const App = () => {
       </Route>
       <Route path="/selezione-info">
         <SelezioneInfo />
+      </Route>
+      <Route path="/selezione-nome">
+        <SelezioneNome />
       </Route>
         <Route path="/">
           <PrimaPagina />

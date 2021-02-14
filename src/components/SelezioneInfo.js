@@ -22,10 +22,10 @@ const Container = styled.div`
   padding: auto;
 `;
 const ChoiceContainer = styled.div`
-  background-color: rgba(237, 246, 249,0.6);
+  background-color: rgba(237, 246, 249,0.5);
   align-self: center;
   width: 90%;
-  height: 560px;
+  height: 70%;
   border: 5px solid;
   border-color: #e29578;
   border-radius: 15px ;
@@ -35,18 +35,22 @@ const ChoiceContainer = styled.div`
   margin: auto; 
   padding: auto;
 `;
-const ChoiceManager = styled.div`
-  height: 100px;
-  width: 100px;
+const ChoiceManager = styled.button`
+  height: 15vh;
+  width: 15vh;
   display: flex;
   border-radius: 15px ;
   border: 5px solid;
-  border-color: #e29578;
+  border-color: #FFDDD2;
   flex-direction: column;
   justify-content: center;
   padding-bottom: 10px;
+  outline: none;
   margin: auto;
- 
+  &:hover{
+     border-color: #E29578;
+    };
+
 `;
 const ChoiceImg = styled.img`
   height: 80px;
@@ -100,18 +104,19 @@ const SelezioneInfo = () =>{
 	};
   //poi cambia TODO nuova schermata
   const handleClickConfirm = () =>{
-     history.push("/home");
+     history.push("/selezione-nome");
   
 	};
   const handleClickDelete = () =>{
     history.push("/home")
 	};
+  
 	return(
 		<Container>
 			<Header leftFun={handleClickBack}/>
       <MexH1Variant>Seleziona categoria capo</MexH1Variant>
       <ChoiceContainer>
-        <ChoiceManager>
+        <ChoiceManager onClick={() => {}}>
           <ChoiceImg src={CappelloImg}>
           </ChoiceImg>
           <ChoiceText>
@@ -144,10 +149,10 @@ const SelezioneInfo = () =>{
         
 
       <SubmitC>
-      <SButton type="button" onClick= {handleClickConfirm}>
+      <SButton type="button" onClick= {handleClickDelete}>
 					<MexH1>Elimina</MexH1>
 			</SButton>
-      <SButton type="button"  onClick= {handleClickDelete}>
+      <SButton type="button"  onClick= {handleClickConfirm}>
 					<MexH1>Conferma</MexH1>
 			</SButton>
     	</SubmitC>
