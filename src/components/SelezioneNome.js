@@ -33,7 +33,7 @@ const InputImgContainer = styled.div`
   margin: 5px;
   border-radius: 10px;
   border: 0px solid;
-  box-shadow: ${(props) => (props.condition ? '0 0 0.5em red' : 'none')};
+  box-shadow: 1px 1px 7px 1px #333333;
 `;
 const InputImg = styled.img`
  	height: 33px;
