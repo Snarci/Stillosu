@@ -38,7 +38,7 @@ const SButton = styled.button`
 	margin: auto;
   outline: none;
   border-radius: 10px;
-	height: 45px;
+	height: 55px;
   font-size: 130%;
   font-weight: bold;
   background-color: #e29578;
@@ -82,7 +82,7 @@ const Camera = () =>{
 	};
   //poi cambia TODO nuova schermata
   const handleClickConfirm = () =>{
-     history.push("/armadio");
+     history.push("/conferma-colore");
   
 	};
   const handleClickDelete = () =>{

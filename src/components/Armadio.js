@@ -97,7 +97,7 @@ const Armadio = () =>{
           abiti.filter(abito => abito.tipo.includes(filtro)).map(abitifiltrati => {
           return(
           <Abitcontainer>
-            <Abito image={abitifiltrati.immagine} nome={abitifiltrati.nome} tipo={abitifiltrati.tipo} id={abitifiltrati.id}/>
+            <Abito image={abitifiltrati.immagine} nome={abitifiltrati.nome} tipo={abitifiltrati.tipo} id={abitifiltrati.id} colore={abitifiltrati.colore}/>
           </Abitcontainer>
            )
           }

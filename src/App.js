@@ -18,6 +18,8 @@ import Camera from "./components/Camera";
 import Visual from "./components/VisualAbito";
 import Outfit from "./components/Outfit";
 import ConfermaColore from "./components/ConfermaColore";
+import SelezioneInfo from "./components/SelezioneInfo";
+import SelezioneNome from "./components/SelezioneNome";
 
 const Container = styled.div`
 

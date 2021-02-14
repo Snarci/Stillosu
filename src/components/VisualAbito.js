@@ -8,6 +8,7 @@ import Header from "./Header";
 const Container = styled.div`
 	height: 100vh;
   display: flex;
+  
   flex-direction: column;
   justify-content: flex-start;
   background-color: #ffddd2;
@@ -16,6 +17,7 @@ const Container = styled.div`
   background-size: cover;
 `;
 const Quadro = styled.div`
+background-color: rgba(237, 246, 249,0.3);
   height: 40vh;
   width: 80%;
   border: 3px solid;
@@ -28,7 +30,8 @@ const Quadro = styled.div`
   overflow-y: scroll;
 `;
 const Info = styled.div`
-  height: 10vh;
+background-color: rgba(237, 246, 249,0.3);
+  height: 14vh;
   width: 80%;
   border: 3px solid;
   border-radius: 15px;
@@ -58,6 +61,15 @@ const Button = styled.button`
   background-color: rgb(226,149,120,0.9);
   outline: none;
   visibility: ${(props) => (props.condition ? 'hidden' : 'visible')};
+`;
+const ColorSemicirle = styled.div`
+   /* Create the circle */ 
+    width: 12vh;
+    height: 12vh; 
+    border: 0px solid black; 
+    border-radius: 50%;
+    align-self: center;
+    box-shadow: 1px 1px 7px 1px #333333;
 `;
 
 const VisualAbito = () =>{
@@ -106,6 +118,7 @@ const VisualAbito = () =>{
       <Info>
         <Type>Nome: {location.state.nomer}</Type>
         <Type>Tipologia: {location.state.tipor}</Type>
+        <Type>Colore:</Type>
       </Info>
       <Button condition={location.state.condr} onClick={handleClickAbbinamento} >
         <Type>Genera un Outfit</Type>
