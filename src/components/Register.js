@@ -2,10 +2,16 @@ import React, { useState } from "react";
 import styled from "styled-components/macro";
 import { useHistory } from "react-router-dom";
 
+import { Shake } from '../utils/animation';
+
 import password from "../res/lock.svg";
 import user from "../res/user.svg";
 import mail from "../res/mail.svg";
 import logo from "../res/logov3.svg";
+
+const ShakeExt = styled(Shake)`
+
+`;
 
 const Container = styled.div`
 	height: 100vh;
@@ -65,6 +71,7 @@ const InputImgContainer = styled.div`
   margin: 5px;
   border-radius: 10px;
   border: 0px solid;
+  box-shadow: ${(props) => (props.condition ? '0 0 0.5em red' : 'none')};
 `;
 const InputImg = styled.img`
  	height: 33px;
@@ -81,6 +88,9 @@ const Input = styled.input`
 	height: 50px;
   font-size: 100%; 
   font-weight: bold;
+  ::placeholder{
+    color: ${(props) => (props.condition ? 'red' : 'gray')};
+  }
 `;
 const SButton = styled.button`
 	width: 70%;
@@ -108,21 +118,46 @@ const Register = ( {setPasswordF , setMailF }) => {
   const [mailS,setMailS] = useState("");
   const [passwordS,setPasswordS] = useState("");
   const [passwordSC,setPasswordSC] = useState("");
+  const [erroreP,setErroreP] = useState(false);
+  const [erroreU,setErroreU] = useState(false);
+  const [erroreM,setErroreM] = useState(false);
+  const [erroreGenerale,setErroreGenerale] = useState(false);
+  const [usr,setUsr] = useState("");
+  let condizione = false;
 	const history = useHistory();
 	const handleClickR = () =>{
-    if(passwordS===passwordSC){
+    if(passwordS===passwordSC&&(passwordS!==""&&passwordSC!=="")){
       setPasswordF(passwordS);
       setMailF(mailS);
-      console.log("Register result");
-      console.log(passwordS);
-      console.log(mailS);
+      setErroreP(false);
+      if(usr!==""){
+        setErroreU(false);
+        if(mailS!==""){
+          setMailF(mailS);
+          condizione = true;
+        }
+      }
+    }else{
+      setErroreP(true);
+    }
+    if(usr===""){
+      setErroreU(true);
+    }else{
+      setErroreU(false);
+    }
+    if(mailS===""){
+      setErroreM(true);
+    }else{
+      setErroreM(false);
+    }
+    if(condizione){
       history.push("/login")
     }else{
-      console.log("qualcosa non va")
+      setErroreGenerale(true);
     }
   };
 	const handleClickL = () =>(
-		history.push("/")
+		history.push("/login")
 );
 	return(
   	<Container>
@@ -133,24 +168,28 @@ const Register = ( {setPasswordF , setMailF }) => {
     	<Mex>
       	<MexH1>Registra il tuo Account!</MexH1>
     	</Mex>
-    	<Form>
-		<InputImgContainer>
-      	  <InputImg src={user} />
-        	<Input type="text" id="fname" name="fname" placeholder="Username" />
-      	</InputImgContainer>
-      	<InputImgContainer>
-        	<InputImg src={mail} />
-        	<Input type="text" id="fname" name="fname" placeholder="Email" onChange={event => setMailS(event.target.value)}/>
-      	</InputImgContainer>
-      	<InputImgContainer>
-      	  <InputImg src={password} />
-     	    <Input type="password" id="lname" name="lname" placeholder="Password" onChange={event => setPasswordS(event.target.value)}/>
-      	</InputImgContainer>
-	  	<InputImgContainer>
-        	<InputImg src={password} />
-        	<Input type="password" id="lname" name="lname" placeholder="Conferma password" onChange={event => setPasswordSC(event.target.value)}/>
-      	</InputImgContainer>
-    	</Form>
+      <Shake
+        playState={erroreGenerale ? 'running' : 'none'}
+        onAnimationEnd={() => setErroreGenerale(true)} >
+    	  <Form>
+		      <InputImgContainer condition={erroreU}>
+      	    <InputImg src={user} />
+        	  <Input type="text" id="fname" name="fname" placeholder="Username" onChange={event => setUsr(event.target.value)} condition={erroreU} />
+      	  </InputImgContainer>
+      	  <InputImgContainer condition={erroreM}>
+        	  <InputImg src={mail} />
+        	  <Input type="text" id="fname" name="fname" placeholder="Email" onChange={event => setMailS(event.target.value)} condition={erroreM} />
+      	  </InputImgContainer>
+      	  <InputImgContainer condition={erroreP} >
+      	    <InputImg src={password} />
+     	      <Input type="password" id="lname" name="lname" placeholder="Password" onChange={event => setPasswordS(event.target.value)} condition={erroreP} />
+      	  </InputImgContainer>
+	  	    <InputImgContainer condition={erroreP} >
+        	  <InputImg src={password} />
+        	  <Input type="password" id="lname" name="lname" placeholder="Conferma password" onChange={event => setPasswordSC(event.target.value)} condition={erroreP} />
+      	  </InputImgContainer>
+    	  </Form>
+      </Shake>
     	<SubmitC>
 				<SButton type="button" onClick={handleClickR}>
 					<MexH1>Registrati</MexH1>

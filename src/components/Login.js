@@ -2,9 +2,15 @@ import React, { useState } from "react";
 import styled from "styled-components/macro";
 import { useHistory } from "react-router-dom";
 
+import { Shake } from '../utils/animation';
+
 import passwordI from "../res/lock.svg";
 import mailI from "../res/mail.svg";
 import logo from "../res/logov3.svg";
+
+const ShakeExt = styled(Shake)`
+
+`;
 
 const Container = styled.div`
 	height: 100vh;
@@ -67,6 +73,7 @@ const InputImgContainer = styled.div`
   margin: 5px;
   border-radius: 10px;
   border: 0px solid;
+  box-shadow: ${(props) => (props.condition ? '0 0 0.5em red' : 'none')};
 `;
 const InputImg = styled.img`
  	height: 33px;
@@ -82,6 +89,9 @@ const Input = styled.input`
 	height: 50px;
   font-size: 100%; 
   font-weight: bold;
+  ::placeholder{
+    color: ${(props) => (props.condition ? 'red' : 'gray')};
+  }
 `;
 const SButton = styled.button`
 	width: 70%;
@@ -108,29 +118,32 @@ const RegText = styled.h1`
 const Login = ({ mailC, passwordC }) => {
   const [mailL,setMailL] = useState("");
   const [passwordL,setPasswordL] = useState("");
+  const [errore,setErrore] = useState(false);
+  const [erroreP,setErroreP] = useState(false);
+  const [erroreU,setErroreU] = useState(false);
 	const history = useHistory();
 	const handleClickR = () =>(
 		history.push("/register")
 	);
 	const handleClickA = () =>{
-    console.log("Login result 4 consle.log")
-    console.log("mail save");
-    console.log(mailC);
-    console.log("mail inserita");
-    console.log(mailL);
-    console.log("password save");
-    console.log(passwordC);
-    console.log("password inserita");
-    console.log(passwordL);
     if(mailC===mailL&&passwordC===passwordL){
       history.push("/home");
     }else{
-      console.log("ancora non va");
+      setErrore(true);
+      if(mailC!==mailL){
+        setErroreU(true);
+      }
+      if(passwordC!==passwordL){
+        setErroreP(true);
+      }
+      if(mailC===mailL){
+        setErroreU(false);
+      }
+      if(passwordC===passwordL){
+        setErroreP(false);
+      }
     }
   };
-  console.log("Creazione Login");
-  console.log(mailC);
-  console.log(passwordC);
 	return(
   	<Container>
     	<ContainerImg>
@@ -140,16 +153,20 @@ const Login = ({ mailC, passwordC }) => {
     	<Mex>
       	<MexH1>Accedi al tuo Account!</MexH1>
     	</Mex>
-    	<Form>
-      	<InputImgContainer>
-        	<InputImg src={mailI} />
-        	<Input type="text" id="fname" name="fname" placeholder="Email" onChange={event => setMailL(event.target.value)} />
-      	</InputImgContainer>
-      	<InputImgContainer>
-        	<InputImg src={passwordI} />
-        	<Input type="password" id="lname" name="lname" placeholder="Password" onChange={event => setPasswordL(event.target.value)} />
-      	</InputImgContainer>
-    	</Form>
+      <Shake 
+        playState={errore ? 'running' : 'none'}
+        onAnimationEnd={() => setErrore(false)}>
+    	  <Form>
+      	  <InputImgContainer condition={erroreU}>
+        	  <InputImg src={mailI} />
+        	  <Input type="text" id="fname" name="fname" placeholder="Email" onChange={event => setMailL(event.target.value)} condition={erroreU}/>
+      	  </InputImgContainer>
+      	  <InputImgContainer condition={erroreP}>
+        	  <InputImg src={passwordI} />
+        	  <Input type="password" id="lname" name="lname" placeholder="Password" onChange={event => setPasswordL(event.target.value)} condition={erroreP}/>
+      	  </InputImgContainer>
+    	  </Form>
+      </Shake>
     	<SubmitC>
       	<SButton type="button" onClick={handleClickA}>
 					<MexH1>Accedi</MexH1>
