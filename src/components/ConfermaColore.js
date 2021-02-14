@@ -49,7 +49,7 @@ const SButton = styled.button`
 	margin: auto;
   outline: none;
   border-radius: 10px;
-	height: 45px;
+	height: 55px;
   font-size: 130%;
   font-weight: bold;
   background-color: #e29578;
@@ -84,7 +84,8 @@ const ConfermaColore = () =>{
 	};
   //poi cambia TODO nuova schermata
   const handleClickConfirm = () =>{
-     history.push("/home");
+    console.log("Salmonella");
+     history.push("/selezione-info");
   
 	};
   const handleClickDelete = () =>{
@@ -99,10 +100,10 @@ const ConfermaColore = () =>{
 			  </PhotoContainerVariant>
 			</PhotoContainer>
       <SubmitC>
-      <SButton type="button" onClick= {handleClickConfirm}>
+      <SButton type="button" onClick= {handleClickDelete}>
 					<MexH1>Elimina</MexH1>
 			</SButton>
-      <SButton type="button"  onClick= {handleClickDelete}>
+      <SButton type="button"  onClick= {handleClickConfirm}>
 					<MexH1>Conferma</MexH1>
 			</SButton>
     	</SubmitC>

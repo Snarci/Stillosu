@@ -17,6 +17,7 @@ import Abbinamento from "./components/Abbinamento";
 import Camera from "./components/Camera";
 import Visual from "./components/VisualAbito";
 import ConfermaColore from "./components/ConfermaColore";
+import SelezioneInfo from "./components/SelezioneInfo";
 
 const Container = styled.div`
 
@@ -50,12 +51,16 @@ const App = () => {
         <Route path="/login">
           <Login mailC={mailC} passwordC={passwordC} />
         </Route>
-        <Route path="/">
-          <PrimaPagina />
-        </Route>
         <Route path="/conferma-colore">
         <ConfermaColore />
       </Route>
+      <Route path="/selezione-info">
+        <SelezioneInfo />
+      </Route>
+        <Route path="/">
+          <PrimaPagina />
+        </Route>
+        
       </Switch>
     </Router>
 );
