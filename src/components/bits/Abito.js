@@ -12,7 +12,8 @@ const Container = styled.button`
   display: flex;
   flex-direction: column;
   padding: 4px;
-  background-color: rgb(226,149,120,0.5);
+  background-color: rgb(226,149,120,0.7);
+  box-shadow: 1px 1px 20px 1px #333333;
 `;
 const Img = styled.img`
   height: 60%;
