@@ -98,8 +98,25 @@ console.log(1 + Math.random() * (4 - 1));
         pantaloneidr:location.state.idpr
       }});
       console.log(location.state.idsr);}
-    else{history.push("/armadio");}
-    
+    else{ 
+      history.push("/armadio");
+    }
+	};
+  const handleClickAbbinamento = () =>{
+    console.log(location.state.condr);
+    console.log(location.state.idsr);
+    console.log(location.state.idcr);
+    console.log(location.state.idmr);
+    console.log(location.state.idpr);
+    history.push({
+      pathname: "/abbinamento",
+      state:{ 
+        scarpeidr:location.state.idsr,
+        capelloidr:location.state.idcr,
+        magliettaid:location.state.idmr,
+        pantaloneidr:location.state.idpr
+      }
+    });
 	};
   const handleCreateOutfit = () =>{
 
@@ -130,7 +147,6 @@ console.log(1 + Math.random() * (4 - 1));
       <Button condition={location.state.condr}>
         <Type onClick={handleCreateOutfit}>Genera un Outfit</Type>
       </Button>
-
 		</Container>
 	);
 };

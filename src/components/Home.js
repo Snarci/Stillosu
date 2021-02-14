@@ -8,7 +8,7 @@ import armadio from "../res/armadio.svg";
 import camera from "../res/camera.svg";
 import capello from "../res/capello.svg";
 import gruccia from "../res/gruccia.svg"
-import user from "../res/user.svg";
+import hot from "../res/hot.svg";
 
 
 const Container = styled.div`
@@ -21,10 +21,6 @@ const Container = styled.div`
   background-attachment: fixed;
   background-size: cover;
 `;
-const MenuContainer = styled.div`
-
-`;
-
 const SubMenuContainer = styled.button`
   background-color: rgba(237, 246, 249,0.6);
   align-self: center;
@@ -36,6 +32,7 @@ const SubMenuContainer = styled.button`
 	flex-direction: column;
   justify-content: center;
   margin: auto; 
+  box-shadow: 1px 1px 7px 1px #333333;
 `;
 const Text = styled.h1`
   align-self: center;
@@ -51,7 +48,7 @@ const Img = styled.img`
 const Home = () => {
 	const history = useHistory();
 	const handleClickCamera = () =>(
-			history.push("/photo-add")
+		history.push("/photo-add")
 	);
 	const handleClickAbbinameto = () =>(
 		history.push("/abbinamento")
@@ -61,6 +58,9 @@ const Home = () => {
 	);
 	const handleClickLogin = () =>(
 		history.push("/login")
+	);
+  const handleClickOutfit = () =>(
+		history.push("/outfit")
 	);
 	return(
     <Container>
@@ -77,9 +77,9 @@ const Home = () => {
         	<Text>Apri il mio armadio</Text>
         	<Img src={gruccia} />
       	</SubMenuContainer>
-				<SubMenuContainer>
+				<SubMenuContainer onClick={handleClickOutfit}>
         	<Text>Outfit di tendenza</Text>
-        	<Img src={user} />
+        	<Img src={hot} />
       	</SubMenuContainer>
   	</Container>
 	);

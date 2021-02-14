@@ -31,34 +31,34 @@ const Anta = styled.div`
   flex-wrap: wrap;
   overflow-y: scroll;
 `;
-const Filto = styled.div`
-  height: 8vh;
-  width: 85%;
-  margin: auto ;
-`;
 const InputImgContainer = styled.div`
+  height: 7vh;
+  width: 70%;
   display: flex;
-  align-items: center;
 	flex-direction: row;
+  justify-content: center;
   background-color: #e29578;
-  margin: 5px;
-  border-radius: 15px;
+  margin: auto;
+  border-radius: 20px;
   border: 1px transparent;
 `
 const InputImg = styled.img`
- 	height: 33px;
+ 	height: 3vh;
 	margin: auto;
 `;
-const Input = styled.input`
-	width: 75%;
-  border-width:0px;
-  border:none;
-  outline:none;
-  background-color: transparent;
+const Circle = styled.button`
+	background: #e29578;
+	border: 0px solid;
+  width: 5vh;
 	height: 5vh;
-  font-size: 100%; 
-  font-weight: bold;
-  margin: auto;
+  border-radius: 50%;
+	margin: auto 17px auto 17px;
+	display: flex;
+	align-items: center;
+  justify-content: center;
+	outline:none;
+  box-shadow: 1px 1px 7px 1px #333333;
+  margin: inherit;
 `;
 const Abitcontainer = styled.div`
   margin: auto;
@@ -75,12 +75,23 @@ const Armadio = () =>{
   
 		<Container>
 			<Header leftFun={handleClickBack}/>
-      <Filto>
         <InputImgContainer>
-          <InputImg src={search}/>
-          <Input value={filtro} onChange={event => setFiltro(event.target.value)} />
+          <Circle>
+            <InputImg src={search}/>
+          </Circle>
+          <Circle>
+            <InputImg src={search}/>
+          </Circle>
+          <Circle>
+            <InputImg src={search}/>
+          </Circle>
+          <Circle>
+            <InputImg src={search}/>
+          </Circle>
+          <Circle>
+            <InputImg src={search}/>
+          </Circle>
         </InputImgContainer>
-      </Filto>
       <Anta>
         {
           abiti.filter(abito => abito.tipo.includes(filtro)).map(abitifiltrati => {

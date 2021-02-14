@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 const Container = styled.button`
   width: 16vh;
   height: 18vh;
-  margin:  auto;
+  margin:  15px;
   border-radius: 15px;
   border: none;
   outline: none;

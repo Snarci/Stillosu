@@ -69,6 +69,7 @@ const Circle = styled.button`
 	display: flex;
 	align-items: center;
 	outline:none;
+  box-shadow: 1px 1px 7px 1px #333333;
 `;
 const Icon = styled.img`
 	height: 4vh;
@@ -121,7 +122,6 @@ const Abbinamento = () =>{
   };
   //funzioni buttons indietro
   const IndietroC = () => {
-  
     if (capelloid!=1){
       setIdC(capelloid-1) 
     }else{

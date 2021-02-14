@@ -1,4 +1,3 @@
-import search from "../res/pp.jpg";
 
 //Immagini da usare
 
@@ -29,7 +28,6 @@ import C3 from "../res/ImmaginiAbiti/Cappelli/3P.png";
 import C4 from "../res/ImmaginiAbiti/Cappelli/4P.png";
 
 //sCARPE CAPPELLO TOP BOT
-import React from 'react';
 
 export const abiti = [
   {

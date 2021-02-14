@@ -16,6 +16,7 @@ import Armadio from "./components/Armadio";
 import Abbinamento from "./components/Abbinamento";
 import Camera from "./components/Camera";
 import Visual from "./components/VisualAbito";
+import Outfit from "./components/Outfit";
 import ConfermaColore from "./components/ConfermaColore";
 import SelezioneInfo from "./components/SelezioneInfo";
 import SelezioneNome from "./components/SelezioneNome";
@@ -30,7 +31,13 @@ const App = () => {
   const [passwordC,setPassword] = useState("admin");
   return(
     <Router>
-      <Switch> 
+      <Switch>
+        <Route path="/outfit">
+          <Outfit />
+        </Route>
+        <Route path="/conferma-colore">
+          <ConfermaColore />
+        </Route> 
         <Route path="/visual">
           <Visual />
         </Route>
@@ -52,19 +59,9 @@ const App = () => {
         <Route path="/login">
           <Login mailC={mailC} passwordC={passwordC} />
         </Route>
-        <Route path="/conferma-colore">
-        <ConfermaColore />
-      </Route>
-      <Route path="/selezione-info">
-        <SelezioneInfo />
-      </Route>
-      <Route path="/selezione-nome">
-        <SelezioneNome />
-      </Route>
         <Route path="/">
           <PrimaPagina />
         </Route>
-        
       </Switch>
     </Router>
 );
