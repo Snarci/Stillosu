@@ -28,7 +28,7 @@ const Text = styled.h1`
   margin: auto;
 `;
 
-const Abito = ({ image, nome,id,tipo,cond}) => {
+const Abito = ({ image, nome,id,tipo,cond,colore}) => {
   const history = useHistory();
 	const handleClick = () =>{
     history.push({
@@ -38,7 +38,8 @@ const Abito = ({ image, nome,id,tipo,cond}) => {
         imager:image,
         idr:id,
         tipor:tipo,
-        condr:cond
+        condr:cond,
+        color:colore
       }});
    
       

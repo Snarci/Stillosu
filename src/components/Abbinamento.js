@@ -149,7 +149,7 @@ const Abbinamento = () =>{
       setIdS(4)
     }
   };
-  const handleClick = (nome,image,id,tipo,cond) =>{
+  const handleClick = (nome,image,id,tipo,cond,colore) =>{
     history.push({
       pathname: "/visual",
       state:{ 
@@ -161,7 +161,8 @@ const Abbinamento = () =>{
         idpr:pantaloneid,
         idmr:magliettaid,
         idsr:scarpeid,
-        idcr:capelloid
+        idcr:capelloid,
+        color:colore
       }});
       console.log("marameo");
       console.log(scarpeid);
@@ -178,7 +179,7 @@ const Abbinamento = () =>{
             <Icon src={arrow} />
           </Circle>
           <Quadro onClick={() => abiti.filter(abito => abito.id===capelloid).filter(abito => abito.tipo.includes("capello")).map(abitifiltrati => {
-            handleClick(abitifiltrati.nome,abitifiltrati.immagine,abitifiltrati.id,abitifiltrati.tipo,true)  })}>  
+            handleClick(abitifiltrati.nome,abitifiltrati.immagine,abitifiltrati.id,abitifiltrati.tipo,true,abitifiltrati.colore)  })}>  
             {
               abiti.filter(abito => abito.id===capelloid).filter(abito => abito.tipo.includes("capello")).map(abitifiltrati => {
               console.log(abitifiltrati.immagine);
@@ -198,7 +199,7 @@ const Abbinamento = () =>{
             <Icon src={arrow}/>
           </Circle>
           <Quadro onClick={() => abiti.filter(abito => abito.id===magliettaid).filter(abito => abito.tipo.includes("maglietta")).map(abitifiltrati => {
-            handleClick(abitifiltrati.nome,abitifiltrati.immagine,abitifiltrati.id,abitifiltrati.tipo,true)  })}>
+            handleClick(abitifiltrati.nome,abitifiltrati.immagine,abitifiltrati.id,abitifiltrati.tipo,true,abitifiltrati.colore)  })}>
             {
               abiti.filter(abito => abito.id===magliettaid).filter(abito => abito.tipo.includes("maglietta")).map(abitifiltrati => {
               console.log(abitifiltrati.immagine);
@@ -217,7 +218,7 @@ const Abbinamento = () =>{
             <Icon src={arrow} />
           </Circle>
           <Quadro onClick={() => abiti.filter(abito => abito.id===pantaloneid).filter(abito => abito.tipo.includes("pantalone")).map(abitifiltrati => {
-            handleClick(abitifiltrati.nome,abitifiltrati.immagine,abitifiltrati.id,abitifiltrati.tipo,true)  })}>
+            handleClick(abitifiltrati.nome,abitifiltrati.immagine,abitifiltrati.id,abitifiltrati.tipo,true,abitifiltrati.colore)  })}>
             {
               abiti.filter(abito => abito.id===pantaloneid).filter(abito => abito.tipo.includes("pantalone")).map(abitifiltrati => {
               console.log(abitifiltrati.immagine);
@@ -236,7 +237,7 @@ const Abbinamento = () =>{
             <Icon src={arrow} />
           </Circle>
           <Quadro onClick={() => abiti.filter(abito => abito.id===scarpeid).filter(abito => abito.tipo.includes("scarpe")).map(abitifiltrati => {
-            handleClick(abitifiltrati.nome,abitifiltrati.immagine,abitifiltrati.id,abitifiltrati.tipo,true)  })}>
+            handleClick(abitifiltrati.nome,abitifiltrati.immagine,abitifiltrati.id,abitifiltrati.tipo,true,abitifiltrati.colore)  })}>
             {
               abiti.filter(abito => abito.id===scarpeid).filter(abito => abito.tipo.includes("scarpe")).map(abitifiltrati => {
               console.log(abitifiltrati.immagine);

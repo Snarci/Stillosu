@@ -113,7 +113,8 @@ const SelezioneNome = () => {
               imager:ImgCapo,
               idr:1,
               tipor:"Maglietta",
-              condr:false
+              condr:false,
+              color:"#050505"
             }});
 	};
   //poi cambia TODO nuova schermata
