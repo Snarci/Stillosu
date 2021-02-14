@@ -5,7 +5,6 @@ import { useHistory } from "react-router-dom";
 import Header from "./Header";
 
 import {outfitArray} from "../utils/outfitP";
-import image from "../res/ImmaginiOutfit/O1.png";
 
 import arrow from "../res/back.svg";
 
@@ -121,6 +120,7 @@ const Outfit = () =>{
       </ContainerOutfit>
       <ButtonContainer>
         <Circle onClick={AvantiO}>
+
         <Icon src={arrow} />
         </Circle>
         <Circle onClick={IndietroO}>
