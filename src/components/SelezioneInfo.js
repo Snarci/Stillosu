@@ -24,8 +24,9 @@ const Container = styled.div`
 const ChoiceContainer = styled.div`
   background-color: rgba(237, 246, 249,0.5);
   align-self: center;
-  width: 90%;
-  height: 70%;
+  width: 50%;
+  height: 60vh;
+  padding: 4px;
   border: 5px solid;
   border-color: #e29578;
   border-radius: 15px ;
@@ -52,9 +53,20 @@ const ChoiceManager = styled.button`
     };
 
 `;
+const Info = styled.div`
+  height: 5vh;
+  width: 80%;
+  border: 3px solid;
+  border-radius: 15px;
+  border-color: #e29578;
+  margin: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+`;
 const ChoiceImg = styled.img`
-  height: 80px;
-  width:  80px;
+  height: 90%;
+  width:  90%;
   align-self: center;
 `;
 const ChoiceText = styled.text`
@@ -74,12 +86,13 @@ const SButton = styled.button`
   font-weight: bold;
   background-color: #e29578;
   border: 0px solid;
+  box-shadow: 1px 1px 7px 1px #333333;
 `;
 
 const SubmitC = styled.div`
 	display: flex;
   flex-direction: row;
-  margin: 8px 0px 8px 0px;
+  margin: 8px 16px 30px 16px;
 `;
 
 const MexH1 = styled.h1`
@@ -91,9 +104,8 @@ const MexH1 = styled.h1`
 const MexH1Variant = styled.h1`
 //background-color: rgba(237, 246, 249,0.8);
 	font-size: 1.3em;
-  margin: 8px 0px 8px 0px;
+  margin: auto;
   align-self: center;
-  margin-top: 60px;
 `;
 
 
@@ -114,7 +126,9 @@ const SelezioneInfo = () =>{
 	return(
 		<Container>
 			<Header leftFun={handleClickBack}/>
-      <MexH1Variant>Seleziona categoria capo</MexH1Variant>
+      <Info>
+        <MexH1Variant>Seleziona categoria capo</MexH1Variant>
+      </Info>
       <ChoiceContainer>
         <ChoiceManager onClick={() => {}}>
           <ChoiceImg src={CappelloImg}>
