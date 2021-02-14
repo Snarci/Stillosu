@@ -10,7 +10,7 @@ const StyledMenu = styled.div`
   right: 0;
   position: fixed;
   overflow-x: hidden;
-  transition: all 0.5s ease-out;
+  transition: all 500ms ease-in-out;
   width: ${(props) => (props.condition === 'opened' ? '100%' : '100%')};
   height: ${(props) => (props.condition === 'opened' ? '100%' : '0%')};
   clip-path: ${(props) => (props.condition === 'opened' ? 'circle(100%)' : 'circle(0%)')};

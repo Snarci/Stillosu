@@ -1,14 +1,9 @@
 import React from "react";
 import styled from "styled-components/macro";
 import { useHistory } from "react-router-dom";
-
-import Header from "./Header";
-
-import image1 from "../res/pp.jpg";
-
-import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
+import Header from "./Header";
 
 const Container = styled.div`
 	height: 100vh;
@@ -60,12 +55,12 @@ const Button = styled.button`
   border-radius: 15px;
   box-shadow: 1px 1px 20px 1px #333333;
   background-color: rgb(226,149,120,0.9);
+  visibility: ${(props) => (props.condition ? 'hidden' : 'visible')};
 `;
 
 const VisualAbito = () =>{
   //importante
   const location = useLocation();
-  
 	const history = useHistory();
 	const handleClickBack = () =>{
     console.clear();
@@ -93,7 +88,7 @@ const VisualAbito = () =>{
         <Type>Nome: {location.state.nomer}</Type>
         <Type>Tipologia: {location.state.tipor}</Type>
       </Info>
-      <Button>
+      <Button condition={location.state.condr}>
         <Type>Genera un Outfit</Type>
       </Button>
 		</Container>
