@@ -8,7 +8,6 @@ import Header from "./Header";
 const Container = styled.div`
 	height: 100vh;
   display: flex;
-  
   flex-direction: column;
   justify-content: flex-start;
   background-color: #ffddd2;
@@ -17,7 +16,7 @@ const Container = styled.div`
   background-size: cover;
 `;
 const Quadro = styled.div`
-background-color: rgba(237, 246, 249,0.3);
+  background-color: rgba(237, 246, 249,0.3);
   height: 40vh;
   width: 80%;
   border: 3px solid;
@@ -30,8 +29,8 @@ background-color: rgba(237, 246, 249,0.3);
   overflow-y: scroll;
 `;
 const Info = styled.div`
-background-color: rgba(237, 246, 249,0.3);
-  height: 35vh;
+  background-color: rgba(237, 246, 249,0.3);
+  height: 22vh;
   width: 80%;
   border: 3px solid;
   border-radius: 15px;
@@ -40,6 +39,7 @@ background-color: rgba(237, 246, 249,0.3);
   padding: 10px;
   display: flex;
   flex-direction: column;
+  text-align: center;
 `;
 const Img = styled.img`
   height: 90%;
@@ -52,85 +52,90 @@ const Type = styled.h1`
 `;
 const Button = styled.button`
   margin: auto;
-  width: 20vh;
-  height: 7vh;
+  width: 25vh;
+  height: 8vh;
   text-align: center;
   border: 0px solid;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 1px 1px 20px 1px #333333;
   background-color: rgb(226,149,120,0.9);
   outline: none;
   visibility: ${(props) => (props.condition ? 'hidden' : 'visible')};
 `;
 const ColorSemicirle = styled.div`
-   /* Create the circle */ 
-    width: 12vh;
-    height: 12vh; 
-    border: 0px solid black; 
-    border-radius: 50%;
-    align-self: center;
-    box-shadow: 1px 1px 7px 1px #333333;
+  /* Create the circle */ 
+  width: 6vh;
+  height: 6vh; 
+  border: 0px solid black; 
+  border-radius: 50%;
+  align-self: center;
+  box-shadow: 1px 1px 7px 1px #333333;
+  margin: 0px 0px 0px 20px;
+`;
+const ColorContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
 `;
 
 const VisualAbito = () =>{
   //importante
-  const location = useLocation();
-	const history = useHistory();
-  const [capelloid,setIdC] = useState(() => 
+const location = useLocation();
+const history = useHistory();
+const [capelloid,setIdC] = useState(() => 
   {if(location.state.tipor==="cappello") {return location.state.idr;} else { return Math.round(1 + Math.random() * (4 - 1));}});
- const [magliettaid,setIdM] =  useState(() => 
- {if(location.state.tipor==="maglietta") {return location.state.idr;} else { return Math.round(1 + Math.random() * (8 - 1));}});
+const [magliettaid,setIdM] =  useState(() => 
+  {if(location.state.tipor==="maglietta") {return location.state.idr;} else { return Math.round(1 + Math.random() * (8 - 1));}});
 const [pantaloneid,setIdP] =  useState(() => 
-{if(location.state.tipor==="pantalone") {return location.state.idr;} else { return Math.round(1 + Math.random() * (4 - 1));}});
+  {if(location.state.tipor==="pantalone") {return location.state.idr;} else { return Math.round(1 + Math.random() * (4 - 1));}});
 const [scarpeid,setIdS] =  useState(() => 
-{if(location.state.tipor==="scarpe") {return location.state.idr;} else { return Math.round(1 + Math.random() * (4 - 1));}});
+  {if(location.state.tipor==="scarpe") {return location.state.idr;} else { return Math.round(1 + Math.random() * (4 - 1));}});
 console.log(1 + Math.random() * (4 - 1));
-	const handleClickBack = () =>{
-    console.clear();
-    console.log("yammeya ");
-    console.log(location.state.condr);
-    if(location.state.condr){history.push({
-      pathname: "/abbinamento",
-      state:{ 
-        scarpeidr:location.state.idsr,
-        capelloidr:location.state.idcr,
-        magliettaid:location.state.idmr,
-        pantaloneidr:location.state.idpr
-      }});
-      console.log(location.state.idsr);}
-    else{ 
-      history.push("/armadio");
+const handleClickBack = () =>{
+  console.clear();
+  console.log("yammeya ");
+  console.log(location.state.condr);
+  if(location.state.condr){history.push({
+    pathname: "/abbinamento",
+    state:{ 
+      scarpeidr:location.state.idsr,
+      capelloidr:location.state.idcr,
+      magliettaid:location.state.idmr,
+      pantaloneidr:location.state.idpr
+    }});
+    console.log(location.state.idsr);}
+  else{ 
+    history.push("/armadio");
+  }
+};
+const handleClickAbbinamento = () =>{
+  console.log(location.state.condr);
+  console.log(location.state.idsr);
+  console.log(location.state.idcr);
+  console.log(location.state.idmr);
+  console.log(location.state.idpr);
+  history.push({
+    pathname: "/abbinamento",
+    state:{ 
+      scarpeidr:location.state.idsr,
+      capelloidr:location.state.idcr,
+      magliettaid:location.state.idmr,
+      pantaloneidr:location.state.idpr
     }
-	};
-  const handleClickAbbinamento = () =>{
-    console.log(location.state.condr);
-    console.log(location.state.idsr);
-    console.log(location.state.idcr);
-    console.log(location.state.idmr);
-    console.log(location.state.idpr);
-    history.push({
-      pathname: "/abbinamento",
-      state:{ 
-        scarpeidr:location.state.idsr,
-        capelloidr:location.state.idcr,
-        magliettaid:location.state.idmr,
-        pantaloneidr:location.state.idpr
-      }
-    });
-	};
-  const handleCreateOutfit = () =>{
-
-    history.push({
-      pathname: "/abbinamento",
-      state:{ 
-        scarpeidr:scarpeid,
-        capelloidr:capelloid,
-        magliettaid:magliettaid,
-        pantaloneidr:pantaloneid
-      }});
-      
-    
-	};
+  });
+};
+const handleCreateOutfit = () =>{
+  history.push({
+    pathname: "/abbinamento",
+    state:{ 
+      scarpeidr:scarpeid,
+      capelloidr:capelloid,
+      magliettaid:magliettaid,
+      pantaloneidr:pantaloneid
+    }
+  });  
+};
 	return(
 		<Container>
 			<Header leftFun={handleClickBack}/>
@@ -140,10 +145,11 @@ console.log(1 + Math.random() * (4 - 1));
       <Info>
         <Type>Nome: {location.state.nomer}</Type>
         <Type>Tipologia: {location.state.tipor}</Type>
-        <Type>Colore:</Type>
-        <ColorSemicirle style={{backgroundColor: location.state.color}}></ColorSemicirle>
+        <ColorContainer>
+          <Type>Colore:</Type>
+          <ColorSemicirle style={{backgroundColor: location.state.color}} />
+        </ColorContainer>
       </Info>
-      
       <Button condition={location.state.condr}>
         <Type onClick={handleCreateOutfit}>Genera un Outfit</Type>
       </Button>

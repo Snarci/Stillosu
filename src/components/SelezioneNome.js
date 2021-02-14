@@ -9,30 +9,14 @@ import mailI from "../res/ImmaginiIconeAbiti/maglia.svg";
 import ImgCapo from "../res/ImmaginiAbiti/T-shirt/1P.png";
 
 import Header from "./Header";
-const ShakeExt = styled(Shake)`
 
-`;
-
-
-const Mex = styled.div`
-  border: 0px solid;
-  border-radius: 15px;
-  padding: 5px;
-  width: 60%;
-  margin: 0px auto 0px auto;
-  text-align: center;
-  
-  
-`;
 const MexH1 = styled.h1`
 //background-color: rgba(237, 246, 249,0.8);
-   
   font-size: 1.3em;
-  margin: 8px 0px 8px 0px;
+  margin: auto;
 `;
 const Form = styled.form`
-
-	height: 20vh;
+	height: 25vh;
   display: flex;
   flex-direction: column;
   width: 90%;
@@ -49,7 +33,7 @@ const InputImgContainer = styled.div`
   margin: 5px;
   border-radius: 10px;
   border: 0px solid;
-  box-shadow: ${(props) => (props.condition ? '0 0 0.5em red' : 'none')};
+  box-shadow: 1px 1px 7px 1px #333333;
 `;
 const InputImg = styled.img`
  	height: 33px;
@@ -69,8 +53,6 @@ const Input = styled.input`
     color: ${(props) => (props.condition ? 'red' : 'gray')};
   }
 `;
-
-
 const Container = styled.div`
   height: 100vh;
   display: flex;
@@ -83,8 +65,6 @@ const Container = styled.div`
   margin: auto; 
   padding: auto;
 `;
-
-
 const SButton = styled.button`
 	width: 45%;
 	margin: auto;
@@ -95,12 +75,23 @@ const SButton = styled.button`
   font-weight: bold;
   background-color: #e29578;
   border: 0px solid;
+  box-shadow: 1px 1px 7px 1px #333333;
 `;
-
+const Info = styled.div`
+  height: 5vh;
+  width: 80%;
+  border: 3px solid;
+  border-radius: 15px;
+  border-color: #e29578;
+  margin: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+`;
 const SubmitC = styled.div`
 	display: flex;
   flex-direction: row;
-  margin: 8px 0px 8px 0px;
+  margin: 8px 16px 30px 16px;
 `;
 
 const SelezioneNome = () => {
@@ -129,27 +120,23 @@ const SelezioneNome = () => {
 	return(
   	<Container>
     	<Header leftFun={handleClickBack}/>
-    	<Mex>
+    	<Info>
       	<MexH1>Inserisci nome del capo</MexH1>
-    	</Mex>
-    
-    	  <Form>
-      	  <InputImgContainer >
-        	  <InputImg src={mailI} />
-        	  <Input type="text"/>
-      	  </InputImgContainer>
-      	 
-    	  </Form>
-     
-    	
-          <SubmitC>
-      <SButton type="button" onClick= {handleClickDelete}>
-					<MexH1>Elimina</MexH1>
-			</SButton>
-      <SButton type="button"  onClick= {handleClickConfirm}>
-					<MexH1>Conferma</MexH1>
-			</SButton>
-    	</SubmitC>
+    	</Info>
+      <Form>
+      	<InputImgContainer >
+        	<InputImg src={mailI} />
+        	<Input type="text"/>
+      	</InputImgContainer>
+    	</Form>
+        <SubmitC>
+          <SButton type="button" onClick= {handleClickDelete}>
+					  <MexH1>Elimina</MexH1>
+			    </SButton>
+          <SButton type="button"  onClick= {handleClickConfirm}>
+					  <MexH1>Conferma</MexH1>
+			  </SButton>
+    	  </SubmitC>
   	</Container>
 )
 }

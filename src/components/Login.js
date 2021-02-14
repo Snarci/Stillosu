@@ -43,8 +43,6 @@ const Mex = styled.div`
   width: 60%;
   margin: 0px auto 0px auto;
   text-align: center;
-  
-  
 `;
 const MexH1 = styled.h1`
 //background-color: rgba(237, 246, 249,0.8);
@@ -52,7 +50,6 @@ const MexH1 = styled.h1`
   margin: 8px 0px 8px 0px;
 `;
 const Form = styled.form`
-
 	height: 20vh;
   display: flex;
   flex-direction: column;

@@ -6,6 +6,11 @@ import Header from "./Header";
 import Abito from "./bits/Abito";
 
 import search from "../res/search.svg";
+import cappelloIcon from "../res/ImmaginiIconeAbiti/cappello.svg";
+import magliaIcon from "../res/ImmaginiIconeAbiti/maglia.svg";
+import pantaloneIcon from "../res/ImmaginiIconeAbiti/pantalone.svg";
+import scarpeIcon from "../res/ImmaginiIconeAbiti/scarpe.svg";
+
 
 import {abiti} from "../utils/date";
 
@@ -32,15 +37,15 @@ const Anta = styled.div`
   overflow-y: scroll;
 `;
 const InputImgContainer = styled.div`
-  height: 7vh;
+  height: 7.5vh;
   width: 70%;
   display: flex;
 	flex-direction: row;
   justify-content: center;
-  background-color: #e29578;
   margin: auto;
   border-radius: 20px;
-  border: 1px transparent;
+  border: 3px solid;
+  border-color: #e29578;
 `
 const InputImg = styled.img`
  	height: 3vh;
@@ -59,6 +64,7 @@ const Circle = styled.button`
 	outline:none;
   box-shadow: 1px 1px 7px 1px #333333;
   margin: inherit;
+  transform: ${(props) => (props.condition ? 'scale(1.3)' : 'scale(1)')};
 `;
 const Abitcontainer = styled.div`
   margin: auto;
@@ -70,26 +76,71 @@ const Armadio = () =>{
     history.push("/home")
 	};
   const [filtro,setFiltro] = useState("");
-  console.log(abiti);
+  const [scarpeSel,setScarpeSel] = useState(false);
+  const [cappelloSel,setCappelloSel] = useState(false);
+  const [magliaSel,setMagliaSel] = useState(false);
+  const [tuttoSel,setTuttoSel] = useState(true);
+  const [pantaloneSel,setPantaloneSel] = useState(false);
+
+  const sceltaFiltroTutto = () => {
+    setFiltro("");
+    setTuttoSel(true);
+    setScarpeSel(false);
+    setCappelloSel(false);
+    setMagliaSel(false);
+    setPantaloneSel(false);
+  }
+  const sceltaFiltroCappello = () => {
+    setFiltro("capello");
+    setTuttoSel(false);
+    setScarpeSel(false);
+    setCappelloSel(true);
+    setMagliaSel(false);
+    setPantaloneSel(false);
+  }
+  const sceltaFiltroMaglia = () => {
+    setFiltro("maglietta");
+    setTuttoSel(false);
+    setScarpeSel(false);
+    setCappelloSel(false);
+    setMagliaSel(true);
+    setPantaloneSel(false);
+  }
+  const sceltaFiltroPantalone = () => {
+    setFiltro("pantalone");
+    setTuttoSel(false);
+    setScarpeSel(false);
+    setCappelloSel(false);
+    setMagliaSel(false);
+    setPantaloneSel(true);
+  }
+  const sceltaFiltroScarpe = () => {
+    setFiltro("scarpe");
+    setTuttoSel(false);
+    setScarpeSel(true);
+    setCappelloSel(false);
+    setMagliaSel(false);
+    setPantaloneSel(false);
+  }
 	return(
   
 		<Container>
 			<Header leftFun={handleClickBack}/>
         <InputImgContainer>
-          <Circle>
+          <Circle onClick={sceltaFiltroTutto} condition={tuttoSel}>
             <InputImg src={search}/>
           </Circle>
-          <Circle>
-            <InputImg src={search}/>
+          <Circle onClick={sceltaFiltroCappello} condition={cappelloSel}>
+            <InputImg src={cappelloIcon}/>
           </Circle>
-          <Circle>
-            <InputImg src={search}/>
+          <Circle onClick={sceltaFiltroMaglia} condition={magliaSel}>
+            <InputImg src={magliaIcon}/>
           </Circle>
-          <Circle>
-            <InputImg src={search}/>
+          <Circle onClick={sceltaFiltroPantalone} condition={pantaloneSel}>
+            <InputImg src={pantaloneIcon}/>
           </Circle>
-          <Circle>
-            <InputImg src={search}/>
+          <Circle onClick={sceltaFiltroScarpe} condition={scarpeSel}>
+            <InputImg src={scarpeIcon}/>
           </Circle>
         </InputImgContainer>
       <Anta>

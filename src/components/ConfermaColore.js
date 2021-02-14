@@ -19,31 +19,29 @@ const Container = styled.div`
 const PhotoContainer = styled.div`
   background-color: rgba(237, 246, 249,1);
   align-self: center;
-  width: 260px;
-  height: 260px;
+  width: 45vh;
+  height: 45vh;
   border: 0px solid;
   border-radius: 100% ;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: auto; 
+  box-shadow: 1px 1px 7px 1px #333333;
 `;
-
 const PhotoContainerVariant = styled.div`
   background-color: rgba(0, 0, 0,.95);
   align-self: center;
-  width: 220px;
-  height: 220px;
+  width: 40vh;
+  height: 40vh;
   border: 0px solid;
   border-radius: 100% ;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: auto; 
+  box-shadow: 1px 1px 7px 1px #333333;
 `;
-
-
-
 const SButton = styled.button`
 	width: 45%;
 	margin: auto;
@@ -54,12 +52,23 @@ const SButton = styled.button`
   font-weight: bold;
   background-color: #e29578;
   border: 0px solid;
+  box-shadow: 1px 1px 7px 1px #333333;
 `;
-
+const Info = styled.div`
+  height: 5vh;
+  width: 80%;
+  border: 3px solid;
+  border-radius: 15px;
+  border-color: #e29578;
+  margin: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+`;
 const SubmitC = styled.div`
 	display: flex;
   flex-direction: row;
-  margin: 8px 0px 8px 0px;
+  margin: 8px 16px 30px 16px;
 `;
 
 const MexH1 = styled.h1`
@@ -71,9 +80,8 @@ const MexH1 = styled.h1`
 const MexH1Variant = styled.h1`
 //background-color: rgba(237, 246, 249,0.8);
 	font-size: 1.3em;
-  margin: 8px 0px 8px 0px;
+  margin: auto;
   align-self: center;
-  margin-top: 60px;
 `;
 
 
@@ -94,7 +102,9 @@ const ConfermaColore = () =>{
 	return(
 		<Container>
 			<Header leftFun={handleClickBack}/>
-      <MexH1Variant>E' questo il colore del capo?</MexH1Variant>
+      <Info>
+        <MexH1Variant>E' questo il colore del capo?</MexH1Variant>
+      </Info>
 			<PhotoContainer>
         <PhotoContainerVariant>
 			  </PhotoContainerVariant>
