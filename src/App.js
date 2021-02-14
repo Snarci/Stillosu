@@ -32,6 +32,15 @@ const App = () => {
   return(
     <Router>
       <Switch>
+        <Route path="/conferma-colore">
+          <ConfermaColore />
+        </Route>
+       <Route path="/selezione-info">
+          <SelezioneInfo />
+        </Route>
+        <Route path="/selezione-nome">
+          <SelezioneNome />
+        </Route>
         <Route path="/outfit">
           <Outfit />
         </Route>
