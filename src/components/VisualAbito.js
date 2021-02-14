@@ -25,12 +25,11 @@ const Quadro = styled.div`
   margin: auto ;
   padding: 10px;
   display: flex;
-  flex-wrap: wrap;
-  overflow-y: scroll;
+    justify-content: center;
 `;
 const Info = styled.div`
   background-color: rgba(237, 246, 249,0.3);
-  height: 22vh;
+  height: 18vh;
   width: 80%;
   border: 3px solid;
   border-radius: 15px;
@@ -48,7 +47,7 @@ const Img = styled.img`
 `;
 const Type = styled.h1`
   margin:auto;
-  font-size: 1.5em;
+  font-size: 1.2em;
 `;
 const Button = styled.button`
   margin: auto;
@@ -108,22 +107,6 @@ const handleClickBack = () =>{
   else{ 
     history.push("/armadio");
   }
-};
-const handleClickAbbinamento = () =>{
-  console.log(location.state.condr);
-  console.log(location.state.idsr);
-  console.log(location.state.idcr);
-  console.log(location.state.idmr);
-  console.log(location.state.idpr);
-  history.push({
-    pathname: "/abbinamento",
-    state:{ 
-      scarpeidr:location.state.idsr,
-      capelloidr:location.state.idcr,
-      magliettaid:location.state.idmr,
-      pantaloneidr:location.state.idpr
-    }
-  });
 };
 const handleCreateOutfit = () =>{
   history.push({

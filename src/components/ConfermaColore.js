@@ -74,12 +74,12 @@ const SubmitC = styled.div`
 const MexH1 = styled.h1`
 //background-color: rgba(237, 246, 249,0.8);
 	font-size: 1.2em;
-  margin: 8px 0px 8px 0px;
+  margin: auto;
   align-self: center;
 `;
 const MexH1Variant = styled.h1`
 //background-color: rgba(237, 246, 249,0.8);
-	font-size: 1.3em;
+	font-size: 1.2em;
   margin: auto;
   align-self: center;
 `;

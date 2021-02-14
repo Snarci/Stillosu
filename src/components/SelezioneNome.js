@@ -12,7 +12,7 @@ import Header from "./Header";
 
 const MexH1 = styled.h1`
 //background-color: rgba(237, 246, 249,0.8);
-  font-size: 1.3em;
+  font-size: 1.2em;
   margin: auto;
 `;
 const Form = styled.form`
@@ -23,7 +23,6 @@ const Form = styled.form`
   margin: auto;
   border-radius: 15px;
   padding: 6px;
-
 `;
 const InputImgContainer = styled.div`
   display: flex;
