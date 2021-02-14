@@ -24,7 +24,6 @@ const PhotoContainer = styled.div`
   border: 0px solid;
   border-radius: 15px ;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   margin: auto; 
 `;
@@ -49,7 +48,7 @@ const SButton = styled.button`
 const SubmitC = styled.div`
 	display: flex;
   flex-direction: row;
-  margin: 8px 0px 8px 0px;
+  margin: 8px 16px 30px 16px;
 `;
 
 const MexH1 = styled.h1`
@@ -73,8 +72,7 @@ const Camera = () =>{
 	};
   //poi cambia TODO nuova schermata
   const handleClickConfirm = () =>{
-    console.log("testttt");
-     history.push("/conferma-colore");
+     history.push("/armadio");
   
 	};
   const handleClickDelete = () =>{

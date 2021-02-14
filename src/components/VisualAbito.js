@@ -34,7 +34,7 @@ const Quadro = styled.div`
 `;
 const Info = styled.div`
   height: 10vh;
-  width: 70%;
+  width: 80%;
   border: 3px solid;
   border-radius: 15px;
   border-color: #e29578;
