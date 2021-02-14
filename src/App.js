@@ -16,6 +16,7 @@ import Armadio from "./components/Armadio";
 import Abbinamento from "./components/Abbinamento";
 import Camera from "./components/Camera";
 import Visual from "./components/VisualAbito";
+import Outfit from "./components/Outfit";
 import ConfermaColore from "./components/ConfermaColore";
 
 const Container = styled.div`
@@ -28,7 +29,13 @@ const App = () => {
   const [passwordC,setPassword] = useState("admin");
   return(
     <Router>
-      <Switch> 
+      <Switch>
+        <Route path="/outfit">
+          <Outfit />
+        </Route>
+        <Route path="/conferma-colore">
+          <ConfermaColore />
+        </Route> 
         <Route path="/visual">
           <Visual />
         </Route>
@@ -53,9 +60,6 @@ const App = () => {
         <Route path="/">
           <PrimaPagina />
         </Route>
-        <Route path="/conferma-colore">
-        <ConfermaColore />
-      </Route>
       </Switch>
     </Router>
 );

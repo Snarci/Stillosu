@@ -121,7 +121,6 @@ const Abbinamento = () =>{
   };
   //funzioni buttons indietro
   const IndietroC = () => {
-  
     if (capelloid!=1){
       setIdC(capelloid-1) 
     }else{

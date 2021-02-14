@@ -77,8 +77,25 @@ const VisualAbito = () =>{
         pantaloneidr:location.state.idpr
       }});
       console.log(location.state.idsr);}
-    else{history.push("/armadio");}
-    
+    else{ 
+      history.push("/armadio");
+    }
+	};
+  const handleClickAbbinamento = () =>{
+    console.log(location.state.condr);
+    console.log(location.state.idsr);
+    console.log(location.state.idcr);
+    console.log(location.state.idmr);
+    console.log(location.state.idpr);
+    history.push({
+      pathname: "/abbinamento",
+      state:{ 
+        scarpeidr:location.state.idsr,
+        capelloidr:location.state.idcr,
+        magliettaid:location.state.idmr,
+        pantaloneidr:location.state.idpr
+      }
+    });
 	};
 	return(
 		<Container>
@@ -90,7 +107,7 @@ const VisualAbito = () =>{
         <Type>Nome: {location.state.nomer}</Type>
         <Type>Tipologia: {location.state.tipor}</Type>
       </Info>
-      <Button condition={location.state.condr}>
+      <Button condition={location.state.condr} onClick={handleClickAbbinamento} >
         <Type>Genera un Outfit</Type>
       </Button>
 		</Container>

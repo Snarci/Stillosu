@@ -21,10 +21,6 @@ const Container = styled.div`
   background-attachment: fixed;
   background-size: cover;
 `;
-const MenuContainer = styled.div`
-
-`;
-
 const SubMenuContainer = styled.button`
   background-color: rgba(237, 246, 249,0.6);
   align-self: center;
@@ -62,6 +58,9 @@ const Home = () => {
 	const handleClickLogin = () =>(
 		history.push("/login")
 	);
+  const handleClickOutfit = () =>(
+		history.push("/outfit")
+	);
 	return(
     <Container>
 		<Header leftFun={handleClickLogin}/>
@@ -77,7 +76,7 @@ const Home = () => {
         	<Text>Apri il mio armadio</Text>
         	<Img src={gruccia} />
       	</SubMenuContainer>
-				<SubMenuContainer>
+				<SubMenuContainer onClick={handleClickOutfit}>
         	<Text>Outfit di tendenza</Text>
         	<Img src={user} />
       	</SubMenuContainer>
