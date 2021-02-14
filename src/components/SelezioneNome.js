@@ -119,7 +119,7 @@ const SelezioneNome = () => {
 	};
   //poi cambia TODO nuova schermata
   const handleClickBack = () =>{
-     history.push("/selezione-nome");
+     history.push("/selezione-info");
   
 	};
     

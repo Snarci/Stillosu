@@ -100,7 +100,7 @@ const MexH1Variant = styled.h1`
 const SelezioneInfo = () =>{
 	const history = useHistory();
 	const handleClickBack = () =>{
-    history.push("/photo-add")
+    history.push("/conferma-colore")
 	};
   //poi cambia TODO nuova schermata
   const handleClickConfirm = () =>{
