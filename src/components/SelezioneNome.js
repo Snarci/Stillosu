@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components/macro";
 import { useHistory } from "react-router-dom";
+import { useToasts } from 'react-toast-notifications';
 
 import { Shake } from '../utils/animation';
 
@@ -95,6 +96,7 @@ const SubmitC = styled.div`
 
 const SelezioneNome = () => {
     const history = useHistory();
+    const { addToast } = useToasts();
 	const handleClickConfirm = () =>{
         history.push({
             pathname: "/visual",
@@ -106,6 +108,8 @@ const SelezioneNome = () => {
               condr:false,
               color:"#050505"
             }});
+        addToast('Saved Successfully', { appearance: 'success' });
+
 	};
   //poi cambia TODO nuova schermata
   const handleClickBack = () =>{

@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.react-toast-notifications__toast {
+  color: #e29578 !important;
+  border-radius: 10px;
+}
+.react-toast-notifications__toast__icon-wrapper {
+  background-color: #e29578 !important;
+}
