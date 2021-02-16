@@ -108,7 +108,7 @@ const SelezioneNome = () => {
               condr:false,
               color:"#050505"
             }});
-        addToast('Saved Successfully', { appearance: 'success' });
+        addToast('Abito aggiunto', { appearance: 'success' });
 
 	};
   //poi cambia TODO nuova schermata
